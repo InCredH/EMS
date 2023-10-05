@@ -6,12 +6,25 @@ a.navbar-brand[b-qtt51pkmto] {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+  padding-left: 100px;
+  margin-left: 40px !important;
 }
 
+.navbar-brand[b-qtt51pkmto]{
+  margin-left: 40px !important;
+}
 a[b-qtt51pkmto] {
   color: #0077cc;
 }
-
+.nav-my[b-qtt51pkmto]{
+  margin-left: 40px;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
 .btn-primary[b-qtt51pkmto] {
   color: #fff;
   background-color: #1b6ec2;
@@ -31,6 +44,12 @@ a[b-qtt51pkmto] {
   border-bottom: 1px solid #e5e5e5;
 }
 
+.container[b-qtt51pkmto]{
+  width: 100%; 
+  white-space: nowrap; 
+  overflow-x: auto; 
+  margin-left: 0%;
+}
 .box-shadow[b-qtt51pkmto] {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
