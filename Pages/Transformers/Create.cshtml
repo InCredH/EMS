@@ -1,0 +1,74 @@
+@page
+@model EMS.Pages.Transformers.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Transformer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Transformer.SubstationType" class="control-label"></label>
+                <input asp-for="Transformer.SubstationType" class="form-control" />
+                <span asp-validation-for="Transformer.SubstationType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transformer.Voltage1Id" class="control-label"></label>
+                <select asp-for="Transformer.Voltage1Id" class ="form-control" asp-items="ViewBag.Voltage1Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transformer.Voltage2Id" class="control-label"></label>
+                <select asp-for="Transformer.Voltage2Id" class ="form-control" asp-items="ViewBag.Voltage2Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transformer.MVACapacity" class="control-label"></label>
+                <input asp-for="Transformer.MVACapacity" class="form-control" />
+                <span asp-validation-for="Transformer.MVACapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transformer.Substation1Id" class="control-label"></label>
+                <select asp-for="Transformer.Substation1Id" class ="form-control" asp-items="ViewBag.Substation1Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transformer.Substation2Id" class="control-label"></label>
+                <select asp-for="Transformer.Substation2Id" class ="form-control" asp-items="ViewBag.Substation2Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transformer.ElementNumber" class="control-label"></label>
+                <input asp-for="Transformer.ElementNumber" class="form-control" />
+                <span asp-validation-for="Transformer.ElementNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transformer.CommissioningDate" class="control-label"></label>
+                <input asp-for="Transformer.CommissioningDate" class="form-control" />
+                <span asp-validation-for="Transformer.CommissioningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transformer.DecommissioningDate" class="control-label"></label>
+                <input asp-for="Transformer.DecommissioningDate" class="form-control" />
+                <span asp-validation-for="Transformer.DecommissioningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transformer.RegionId" class="control-label"></label>
+                <select asp-for="Transformer.RegionId" class ="form-control" asp-items="ViewBag.RegionId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

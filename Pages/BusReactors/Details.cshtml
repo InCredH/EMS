@@ -1,0 +1,73 @@
+@page
+@model EMS.Pages.BusReactors.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>BusReactor</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BusReactor.MVARCapacity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BusReactor.MVARCapacity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BusReactor.Bus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BusReactor.Bus.ElementType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BusReactor.ElementType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BusReactor.ElementType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BusReactor.ElementNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BusReactor.ElementNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BusReactor.CommissioningDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BusReactor.CommissioningDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BusReactor.DecommissioningDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BusReactor.DecommissioningDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BusReactor.Substation1)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BusReactor.Substation1.SubstationId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BusReactor.Substation2)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BusReactor.Substation2.SubstationId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BusReactor.Region)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BusReactor.Region.RegionId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.BusReactor?.ElementId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

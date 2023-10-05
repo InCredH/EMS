@@ -1,0 +1,96 @@
+@page
+@model EMS.Pages.Transformers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].SubstationType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].MVACapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].Voltage1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].Voltage2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].ElementType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].ElementNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].CommissioningDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].DecommissioningDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].Substation1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].Substation2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].Region)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Transformer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubstationType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MVACapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voltage1.VoltageId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voltage2.VoltageId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ElementType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ElementNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommissioningDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DecommissioningDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Substation1.SubstationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Substation2.SubstationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Region.RegionId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ElementId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ElementId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ElementId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

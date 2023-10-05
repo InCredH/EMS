@@ -1,0 +1,36 @@
+@page
+@model EMS.Pages.Voltages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Voltage[0].VoltageLevel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Voltage) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VoltageLevel)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.VoltageId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.VoltageId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.VoltageId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

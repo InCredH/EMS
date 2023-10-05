@@ -1,0 +1,45 @@
+@page
+@model EMS.Pages.Substations.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Substation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Substation.SubstationId" />
+            <div class="form-group">
+                <label asp-for="Substation.VoltageId" class="control-label"></label>
+                <select asp-for="Substation.VoltageId" class="form-control" asp-items="ViewBag.VoltageId"></select>
+                <span asp-validation-for="Substation.VoltageId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Substation.LocationId" class="control-label"></label>
+                <select asp-for="Substation.LocationId" class="form-control" asp-items="ViewBag.LocationId"></select>
+                <span asp-validation-for="Substation.LocationId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Substation.SubstationType" class="control-label"></label>
+                <input asp-for="Substation.SubstationType" class="form-control" />
+                <span asp-validation-for="Substation.SubstationType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

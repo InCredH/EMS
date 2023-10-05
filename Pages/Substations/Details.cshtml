@@ -1,0 +1,37 @@
+@page
+@model EMS.Pages.Substations.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Substation</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Substation.SubstationType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Substation.SubstationType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Substation.Voltage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Substation.Voltage.VoltageLevel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Substation.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Substation.Location.LocationName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Substation?.SubstationId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,36 @@
+@page
+@model EMS.Pages.GeneratingStationTypes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratingStationType[0].StationType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.GeneratingStationType) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StationType)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.GeneratingStationTypeId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.GeneratingStationTypeId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.GeneratingStationTypeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

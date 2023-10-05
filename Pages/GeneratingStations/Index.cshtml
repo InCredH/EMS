@@ -1,0 +1,66 @@
+@page
+@model EMS.Pages.GeneratingStations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratingStation[0].GeneratingStationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratingStation[0].InstalledCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratingStation[0].MVARCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratingStation[0].GeneratingStationClassification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratingStation[0].GeneratingStationType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratingStation[0].Fuel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.GeneratingStation) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneratingStationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstalledCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MVARCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneratingStationClassification.GeneratingStationClassificationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneratingStationType.GeneratingStationTypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fuel.FuelId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.GeneratingStationId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.GeneratingStationId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.GeneratingStationId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

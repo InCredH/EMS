@@ -1,0 +1,65 @@
+@page
+@model EMS.Pages.BusReactors.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BusReactor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BusReactor.BusId" class="control-label"></label>
+                <select asp-for="BusReactor.BusId" class ="form-control" asp-items="ViewBag.BusId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusReactor.MVARCapacity" class="control-label"></label>
+                <input asp-for="BusReactor.MVARCapacity" class="form-control" />
+                <span asp-validation-for="BusReactor.MVARCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusReactor.Substation1Id" class="control-label"></label>
+                <select asp-for="BusReactor.Substation1Id" class ="form-control" asp-items="ViewBag.Substation1Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusReactor.Substation2Id" class="control-label"></label>
+                <select asp-for="BusReactor.Substation2Id" class ="form-control" asp-items="ViewBag.Substation2Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusReactor.ElementNumber" class="control-label"></label>
+                <input asp-for="BusReactor.ElementNumber" class="form-control" />
+                <span asp-validation-for="BusReactor.ElementNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusReactor.CommissioningDate" class="control-label"></label>
+                <input asp-for="BusReactor.CommissioningDate" class="form-control" />
+                <span asp-validation-for="BusReactor.CommissioningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusReactor.DecommissioningDate" class="control-label"></label>
+                <input asp-for="BusReactor.DecommissioningDate" class="form-control" />
+                <span asp-validation-for="BusReactor.DecommissioningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusReactor.RegionId" class="control-label"></label>
+                <select asp-for="BusReactor.RegionId" class ="form-control" asp-items="ViewBag.RegionId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

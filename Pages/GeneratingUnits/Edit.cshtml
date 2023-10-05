@@ -1,0 +1,85 @@
+@page
+@model EMS.Pages.GeneratingUnits.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>GeneratingUnit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="GeneratingUnit.GeneratingStationId" class="control-label"></label>
+                <select asp-for="GeneratingUnit.GeneratingStationId" class="form-control" asp-items="ViewBag.GeneratingStationId"></select>
+                <span asp-validation-for="GeneratingUnit.GeneratingStationId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneratingUnit.InstalledCapacity" class="control-label"></label>
+                <input asp-for="GeneratingUnit.InstalledCapacity" class="form-control" />
+                <span asp-validation-for="GeneratingUnit.InstalledCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneratingUnit.VoltageId" class="control-label"></label>
+                <select asp-for="GeneratingUnit.VoltageId" class="form-control" asp-items="ViewBag.VoltageId"></select>
+                <span asp-validation-for="GeneratingUnit.VoltageId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneratingUnit.GeneratingTransformerHVVoltageId" class="control-label"></label>
+                <select asp-for="GeneratingUnit.GeneratingTransformerHVVoltageId" class="form-control" asp-items="ViewBag.GeneratingTransformerHVVoltageId"></select>
+                <span asp-validation-for="GeneratingUnit.GeneratingTransformerHVVoltageId" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="GeneratingUnit.ElementId" />
+            <div class="form-group">
+                <label asp-for="GeneratingUnit.Substation1Id" class="control-label"></label>
+                <select asp-for="GeneratingUnit.Substation1Id" class="form-control" asp-items="ViewBag.Substation1Id"></select>
+                <span asp-validation-for="GeneratingUnit.Substation1Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneratingUnit.Substation2Id" class="control-label"></label>
+                <select asp-for="GeneratingUnit.Substation2Id" class="form-control" asp-items="ViewBag.Substation2Id"></select>
+                <span asp-validation-for="GeneratingUnit.Substation2Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneratingUnit.ElementType" class="control-label"></label>
+                <input asp-for="GeneratingUnit.ElementType" class="form-control" />
+                <span asp-validation-for="GeneratingUnit.ElementType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneratingUnit.ElementNumber" class="control-label"></label>
+                <input asp-for="GeneratingUnit.ElementNumber" class="form-control" />
+                <span asp-validation-for="GeneratingUnit.ElementNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneratingUnit.CommissioningDate" class="control-label"></label>
+                <input asp-for="GeneratingUnit.CommissioningDate" class="form-control" />
+                <span asp-validation-for="GeneratingUnit.CommissioningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneratingUnit.DecommissioningDate" class="control-label"></label>
+                <input asp-for="GeneratingUnit.DecommissioningDate" class="form-control" />
+                <span asp-validation-for="GeneratingUnit.DecommissioningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneratingUnit.RegionId" class="control-label"></label>
+                <select asp-for="GeneratingUnit.RegionId" class="form-control" asp-items="ViewBag.RegionId"></select>
+                <span asp-validation-for="GeneratingUnit.RegionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
