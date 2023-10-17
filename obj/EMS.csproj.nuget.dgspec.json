@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Harsh\\Desktop\\Code\\EMS\\EMS.csproj": {}
+    "C:\\Users\\Harsh\\Desktop\\ems\\EMS\\EMS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Harsh\\Desktop\\Code\\EMS\\EMS.csproj": {
+    "C:\\Users\\Harsh\\Desktop\\ems\\EMS\\EMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Harsh\\Desktop\\Code\\EMS\\EMS.csproj",
+        "projectUniqueName": "C:\\Users\\Harsh\\Desktop\\ems\\EMS\\EMS.csproj",
         "projectName": "EMS",
-        "projectPath": "C:\\Users\\Harsh\\Desktop\\Code\\EMS\\EMS.csproj",
+        "projectPath": "C:\\Users\\Harsh\\Desktop\\ems\\EMS\\EMS.csproj",
         "packagesPath": "C:\\Users\\Harsh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Harsh\\Desktop\\Code\\EMS\\obj\\",
+        "outputPath": "C:\\Users\\Harsh\\Desktop\\ems\\EMS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Harsh\\AppData\\Roaming\\NuGet\\NuGet.Config",

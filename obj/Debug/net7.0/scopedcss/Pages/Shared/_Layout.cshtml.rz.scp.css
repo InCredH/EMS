@@ -1,6 +1,27 @@
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+.Layout__app[b-qtt51pkmto] {
+  display: flex;
+}
+
+.Sidebar_container[b-qtt51pkmto] {
+  max-height: 100vh;
+  height: 100vh;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.links_container[b-qtt51pkmto] {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
 a.navbar-brand[b-qtt51pkmto] {
   white-space: normal;
   text-align: center;
@@ -49,6 +70,11 @@ a[b-qtt51pkmto] {
   overflow-x: auto; 
   margin-left: 0%;
 }
+
+.padding_container[b-qtt51pkmto] {
+  padding: 20px;
+}
+
 .box-shadow[b-qtt51pkmto] {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
