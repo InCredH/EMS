@@ -19,8 +19,11 @@
                 <span asp-validation-for="Owner.OwnerName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Owner.ConstituentId" class="control-label"></label>
-                <select asp-for="Owner.ConstituentId" class ="form-control" asp-items="ViewBag.ConstituentId"></select>
+                <label asp-for="SelectedConstituentId" class="control-label">Constituent Name</label>
+                <select asp-for="SelectedConstituentId" asp-items="Model.ConstituentList" class="form-control">
+                    <option value="">-- Select Constituent Name --</option>
+                </select>
+                <span asp-validation-for="SelectedConstituentId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

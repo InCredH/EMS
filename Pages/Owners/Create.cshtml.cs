@@ -22,19 +22,27 @@ namespace EMS.Pages.Owners
         [BindProperty]
         public Owner Owner { get; set; }
 
+        // Add properties for ConstituentName and ConstituentId
+        [BindProperty]
+        public int SelectedConstituentId { get; set; }
+
+        public SelectList ConstituentList { get; set; }
+
         public IActionResult OnGet()
         {
-            ViewData["ConstituentId"] = new SelectList(_context.Constituent, "ConstituentId", "ConstituentId");
+            ConstituentList = new SelectList(_context.Constituent, "ConstituentId", "ConstituentName");
             return Page();
         }
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
+
+            // Set the ConstituentId based on the selected ConstituentName
+            Owner.ConstituentId = SelectedConstituentId;
 
             _context.Owner.Add(Owner);
             await _context.SaveChangesAsync();
