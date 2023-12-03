@@ -13,9 +13,9 @@ namespace EMS.Pages.Substations
 {
     public class EditModel : PageModel
     {
-        private readonly EMS.Data.SchoolContext _context;
+        private readonly EMS.Data.DataContext _context;
 
-        public EditModel(EMS.Data.SchoolContext context)
+        public EditModel(EMS.Data.DataContext context)
         {
             _context = context;
         }
@@ -37,7 +37,7 @@ namespace EMS.Pages.Substations
             }
             Substation = substation;
            ViewData["LocationId"] = new SelectList(_context.Location, "LocationId", "LocationId");
-           ViewData["VoltageId"] = new SelectList(_context.Set<Voltage>(), "VoltageId", "VoltageId");
+           ViewData["VoltageId"] = new SelectList(_context.Voltage, "VoltageId", "VoltageId");
             return Page();
         }
 
@@ -73,7 +73,7 @@ namespace EMS.Pages.Substations
 
         private bool SubstationExists(int id)
         {
-          return _context.Substation.Any(e => e.SubstationId == id);
+          return (_context.Substation?.Any(e => e.SubstationId == id)).GetValueOrDefault();
         }
     }
 }

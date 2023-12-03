@@ -12,9 +12,9 @@ namespace EMS.Pages.States
 {
     public class CreateModel : PageModel
     {
-        private readonly EMS.Data.SchoolContext _context;
+        private readonly EMS.Data.DataContext _context;
 
-        public CreateModel(EMS.Data.SchoolContext context)
+        public CreateModel(EMS.Data.DataContext context)
         {
             _context = context;
         }
@@ -25,7 +25,7 @@ namespace EMS.Pages.States
         }
 
         [BindProperty]
-        public State State { get; set; }
+        public State? State { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
@@ -36,8 +36,10 @@ namespace EMS.Pages.States
                 return Page();
             }
 
-            _context.State.Add(State);
-            await _context.SaveChangesAsync();
+            if(State != null) {
+                _context.State.Add(State);
+                await _context.SaveChangesAsync();
+            }
 
             return RedirectToPage("./Index");
         }

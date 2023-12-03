@@ -12,9 +12,9 @@ namespace EMS.Pages.Regions
 {
     public class IndexModel : PageModel
     {
-        private readonly EMS.Data.SchoolContext _context;
+        private readonly EMS.Data.DataContext _context;
 
-        public IndexModel(EMS.Data.SchoolContext context)
+        public IndexModel(EMS.Data.DataContext context)
         {
             _context = context;
         }

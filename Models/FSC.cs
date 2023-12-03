@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace EMS.Models
 {
     public class FSC
     {
-        
+        public int FSCId { get; set; }
+        public int ElementId { get; set; }
+
+        public Element? Element { get; set; }
     }
 }

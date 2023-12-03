@@ -16,86 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Harsh\Desktop\ems\EMS
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Bays/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmF5c1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Bays/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmF5c1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Bays/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmF5c1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Bays/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmF5c1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Bays/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQmF5c1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Buses/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVzZXNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Buses/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVzZXNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Buses/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVzZXNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Buses/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVzZXNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Buses/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVzZXNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/BusReactors/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVzUmVhY3RvcnNcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/BusReactors/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVzUmVhY3RvcnNcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/BusReactors/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVzUmVhY3RvcnNcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/BusReactors/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVzUmVhY3RvcnNcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/BusReactors/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVzUmVhY3RvcnNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Compensators/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGVuc2F0b3JzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Compensators/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGVuc2F0b3JzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Compensators/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGVuc2F0b3JzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Compensators/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGVuc2F0b3JzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Compensators/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGVuc2F0b3JzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Harsh/Desktop/ems/EMS/Pages/Constituents/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29uc3RpdHVlbnRzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -118,26 +38,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Harsh/Desktop/ems/EMS/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/FilterBanks/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsdGVyQmFua3NcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/FilterBanks/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsdGVyQmFua3NcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/FilterBanks/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsdGVyQmFua3NcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/FilterBanks/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsdGVyQmFua3NcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/FilterBanks/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsdGVyQmFua3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Harsh/Desktop/ems/EMS/Pages/Fuels/Create.cshtml]
@@ -218,26 +118,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Harsh/Desktop/ems/EMS/Pages/GeneratingStationTypes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VuZXJhdGluZ1N0YXRpb25UeXBlc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/GeneratingUnits/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VuZXJhdGluZ1VuaXRzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/GeneratingUnits/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VuZXJhdGluZ1VuaXRzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/GeneratingUnits/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VuZXJhdGluZ1VuaXRzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/GeneratingUnits/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VuZXJhdGluZ1VuaXRzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/GeneratingUnits/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VuZXJhdGluZ1VuaXRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Harsh/Desktop/ems/EMS/Pages/Index.cshtml]
@@ -332,26 +212,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhdGVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/SubFilterBanks/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3ViRmlsdGVyQmFua3NcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/SubFilterBanks/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3ViRmlsdGVyQmFua3NcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/SubFilterBanks/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3ViRmlsdGVyQmFua3NcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/SubFilterBanks/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3ViRmlsdGVyQmFua3NcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/SubFilterBanks/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3ViRmlsdGVyQmFua3NcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Harsh/Desktop/ems/EMS/Pages/Substations/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3Vic3RhdGlvbnNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -370,26 +230,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Harsh/Desktop/ems/EMS/Pages/Substations/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3Vic3RhdGlvbnNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Transformers/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbnNmb3JtZXJzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Transformers/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbnNmb3JtZXJzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Transformers/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbnNmb3JtZXJzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Transformers/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbnNmb3JtZXJzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Harsh/Desktop/ems/EMS/Pages/Transformers/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhbnNmb3JtZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Harsh/Desktop/ems/EMS/Pages/Voltages/Create.cshtml]

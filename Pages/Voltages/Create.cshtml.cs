@@ -12,9 +12,9 @@ namespace EMS.Pages.Voltages
 {
     public class CreateModel : PageModel
     {
-        private readonly EMS.Data.SchoolContext _context;
+        private readonly EMS.Data.DataContext _context;
 
-        public CreateModel(EMS.Data.SchoolContext context)
+        public CreateModel(EMS.Data.DataContext context)
         {
             _context = context;
         }

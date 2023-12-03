@@ -12,15 +12,15 @@ namespace EMS.Pages.Substations
 {
     public class DeleteModel : PageModel
     {
-        private readonly EMS.Data.SchoolContext _context;
+        private readonly EMS.Data.DataContext _context;
 
-        public DeleteModel(EMS.Data.SchoolContext context)
+        public DeleteModel(EMS.Data.DataContext context)
         {
             _context = context;
         }
 
         [BindProperty]
-      public Substation Substation { get; set; }
+      public Substation Substation { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

@@ -13,9 +13,9 @@ namespace EMS.Pages.Locations
 {
     public class EditModel : PageModel
     {
-        private readonly EMS.Data.SchoolContext _context;
+        private readonly EMS.Data.DataContext _context;
 
-        public EditModel(EMS.Data.SchoolContext context)
+        public EditModel(EMS.Data.DataContext context)
         {
             _context = context;
         }

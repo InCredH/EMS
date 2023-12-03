@@ -8,6 +8,6 @@ namespace EMS.Models
     public class GeneratingStationType
     {
         public int GeneratingStationTypeId { get; set; }
-        public string StationType { get; set; }
+        public string? StationType { get; set; }
     }
 }

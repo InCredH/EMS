@@ -12,14 +12,14 @@ namespace EMS.Pages.Substations
 {
     public class DetailsModel : PageModel
     {
-        private readonly EMS.Data.SchoolContext _context;
+        private readonly EMS.Data.DataContext _context;
 
-        public DetailsModel(EMS.Data.SchoolContext context)
+        public DetailsModel(EMS.Data.DataContext context)
         {
             _context = context;
         }
 
-      public Substation Substation { get; set; }
+      public Substation Substation { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,11 +28,7 @@ namespace EMS.Pages.Substations
                 return NotFound();
             }
 
-            var substation = await _context.Substation
-                .Include(s => s.Voltage)
-                .Include(s => s.Location)
-                .FirstOrDefaultAsync(m => m.SubstationId == id);
-            
+            var substation = await _context.Substation.FirstOrDefaultAsync(m => m.SubstationId == id);
             if (substation == null)
             {
                 return NotFound();

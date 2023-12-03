@@ -12,9 +12,9 @@ namespace EMS.Pages.Regions
 {
     public class CreateModel : PageModel
     {
-        private readonly EMS.Data.SchoolContext _context;
+        private readonly EMS.Data.DataContext _context;
 
-        public CreateModel(EMS.Data.SchoolContext context)
+        public CreateModel(EMS.Data.DataContext context)
         {
             _context = context;
         }
@@ -25,7 +25,7 @@ namespace EMS.Pages.Regions
         }
 
         [BindProperty]
-        public Region Region { get; set; }
+        public Region? Region { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
@@ -36,8 +36,11 @@ namespace EMS.Pages.Regions
                 return Page();
             }
 
-            _context.Region.Add(Region);
-            await _context.SaveChangesAsync();
+            if(Region != null) {
+                _context.Region.Add(Region);
+                await _context.SaveChangesAsync();
+            }
+
 
             return RedirectToPage("./Index");
         }

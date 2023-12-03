@@ -14,6 +14,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Substation[0].SubstationName)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Substation[0].SubstationType)
             </th>
             <th>
@@ -29,13 +32,16 @@
 @foreach (var item in Model.Substation) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.SubstationName)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.SubstationType)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Voltage.VoltageId)
+                @Html.DisplayFor(modelItem => item.Voltage.VoltageLevel)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Location.LocationId)
+                @Html.DisplayFor(modelItem => item.Location.LocationName)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.SubstationId">Edit</a> |

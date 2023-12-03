@@ -1,15 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace EMS.Models
 {
-    public class Bus : Element
+    public class Bus 
     {
+        public int BusId { get; set; }
+        public int ElementId { get; set; }
         public int SubstationId { get; set; }
-        public string BusType { get; set; }
+        public string? BusType { get; set; }
 
-        public Substation Substation { get; set; }
+        public Element? Element { get; set; }
+        public Substation? Substation { get; set; }
     }
 }

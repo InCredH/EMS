@@ -12,9 +12,9 @@ namespace EMS.Pages.GeneratingStationClassifications
 {
     public class DetailsModel : PageModel
     {
-        private readonly EMS.Data.SchoolContext _context;
+        private readonly EMS.Data.DataContext _context;
 
-        public DetailsModel(EMS.Data.SchoolContext context)
+        public DetailsModel(EMS.Data.DataContext context)
         {
             _context = context;
         }

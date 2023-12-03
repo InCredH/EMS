@@ -12,9 +12,9 @@ namespace EMS.Pages.GeneratingStationTypes
 {
     public class DeleteModel : PageModel
     {
-        private readonly EMS.Data.SchoolContext _context;
+        private readonly EMS.Data.DataContext _context;
 
-        public DeleteModel(EMS.Data.SchoolContext context)
+        public DeleteModel(EMS.Data.DataContext context)
         {
             _context = context;
         }
