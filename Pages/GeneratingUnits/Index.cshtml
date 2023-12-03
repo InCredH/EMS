@@ -1,0 +1,66 @@
+@page
+@model EMS.Pages.GeneratingUnits.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratingUnit[0].GeneratingUnitName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratingUnit[0].InstalledCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratingUnit[0].GeneratingStation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratingUnit[0].Element)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratingUnit[0].Voltage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GeneratingUnit[0].GeneratingTransformerHVVoltage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.GeneratingUnit) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneratingUnitName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstalledCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneratingStation.GeneratingStationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Element.ElementId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voltage.VoltageId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GeneratingTransformerHVVoltage.VoltageId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.GeneratingUnitId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.GeneratingUnitId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.GeneratingUnitId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

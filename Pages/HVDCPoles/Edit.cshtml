@@ -1,0 +1,65 @@
+@page
+@model EMS.Pages.HVDCPoles.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>HVDCPole</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HVDCPole.HVDCPoleId" />
+            <div class="form-group">
+                <label asp-for="HVDCPole.ElementId" class="control-label"></label>
+                <select asp-for="HVDCPole.ElementId" class="form-control" asp-items="ViewBag.ElementId"></select>
+                <span asp-validation-for="HVDCPole.ElementId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HVDCPole.PoleType" class="control-label"></label>
+                <input asp-for="HVDCPole.PoleType" class="form-control" />
+                <span asp-validation-for="HVDCPole.PoleType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HVDCPole.VoltageId" class="control-label"></label>
+                <select asp-for="HVDCPole.VoltageId" class="form-control" asp-items="ViewBag.VoltageId"></select>
+                <span asp-validation-for="HVDCPole.VoltageId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HVDCPole.PoleName" class="control-label"></label>
+                <input asp-for="HVDCPole.PoleName" class="form-control" />
+                <span asp-validation-for="HVDCPole.PoleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HVDCPole.PoleNumber" class="control-label"></label>
+                <input asp-for="HVDCPole.PoleNumber" class="form-control" />
+                <span asp-validation-for="HVDCPole.PoleNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HVDCPole.MaxFiringAngle" class="control-label"></label>
+                <input asp-for="HVDCPole.MaxFiringAngle" class="form-control" />
+                <span asp-validation-for="HVDCPole.MaxFiringAngle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HVDCPole.MinFiringAngle" class="control-label"></label>
+                <input asp-for="HVDCPole.MinFiringAngle" class="form-control" />
+                <span asp-validation-for="HVDCPole.MinFiringAngle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,72 @@
+@page
+@model EMS.Pages.Transformers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].TransformerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].TransformerType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].MVACapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].Voltage1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].Voltage2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].Element)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Transformer) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransformerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransformerType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MVACapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voltage1.VoltageId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voltage2.VoltageId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location.LocationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Element.ElementId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.TransformerId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.TransformerId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.TransformerId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

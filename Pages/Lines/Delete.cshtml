@@ -1,0 +1,106 @@
+@page
+@model EMS.Pages.Lines.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Line</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.LineType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.LineType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.CircuitNumber)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.CircuitNumber)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.LineName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.LineName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.Length)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.Length)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.ConductorType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.ConductorType)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.AutoReclosure)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.AutoReclosure)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.LineCircuitName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.LineCircuitName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.SendingEndSPS)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.SendingEndSPS)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.ReceivingEndSPS)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.ReceivingEndSPS)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.FirstChargingDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.FirstChargingDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.Element)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.Element.ElementId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.FromBus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.FromBus.BusId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.ToBus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.ToBus.BusId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Line.Voltage)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Line.Voltage.VoltageId)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Line.LineId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,45 @@
+@page
+@model EMS.Pages.LineReactors.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>LineReactor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="LineReactor.LineReactorId" />
+            <div class="form-group">
+                <label asp-for="LineReactor.ElementId" class="control-label"></label>
+                <select asp-for="LineReactor.ElementId" class="form-control" asp-items="ViewBag.ElementId"></select>
+                <span asp-validation-for="LineReactor.ElementId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LineReactor.SubstationId" class="control-label"></label>
+                <select asp-for="LineReactor.SubstationId" class="form-control" asp-items="ViewBag.SubstationId"></select>
+                <span asp-validation-for="LineReactor.SubstationId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LineReactor.LineId" class="control-label"></label>
+                <select asp-for="LineReactor.LineId" class="form-control" asp-items="ViewBag.LineId"></select>
+                <span asp-validation-for="LineReactor.LineId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

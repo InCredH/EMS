@@ -47,13 +47,13 @@
                 @Html.DisplayFor(modelItem => item.MVARCapacity)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GeneratingStationClassification.Classification)
+                @Html.DisplayFor(modelItem => item.GeneratingStationClassification.GeneratingStationClassificationId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.GeneratingStationType.StationType)
+                @Html.DisplayFor(modelItem => item.GeneratingStationType.GeneratingStationTypeId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Fuel.FuelName)
+                @Html.DisplayFor(modelItem => item.Fuel.FuelId)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.GeneratingStationId">Edit</a> |

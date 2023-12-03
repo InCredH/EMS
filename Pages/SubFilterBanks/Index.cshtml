@@ -1,0 +1,42 @@
+@page
+@model EMS.Pages.SubFilterBanks.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SubFilterBank[0].FilterBank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubFilterBank[0].Element)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.SubFilterBank) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FilterBank.FilterBankId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Element.ElementId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.SubFilterBankId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.SubFilterBankId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.SubFilterBankId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
