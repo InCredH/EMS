@@ -38,7 +38,7 @@ namespace EMS.Pages.GeneratingStations
             GeneratingStation = generatingstation;
            ViewData["FuelId"] = new SelectList(_context.Fuel, "FuelId", "FuelId");
            ViewData["GeneratingStationClassificationId"] = new SelectList(_context.GeneratingStationClassification, "GeneratingStationClassificationId", "GeneratingStationClassificationId");
-           ViewData["GeneratingStationTypeId"] = new SelectList(_context.Set<GeneratingStationType>(), "GeneratingStationTypeId", "GeneratingStationTypeId");
+           ViewData["GeneratingStationTypeId"] = new SelectList(_context.GeneratingStationType, "GeneratingStationTypeId", "GeneratingStationTypeId");
             return Page();
         }
 
@@ -74,7 +74,7 @@ namespace EMS.Pages.GeneratingStations
 
         private bool GeneratingStationExists(int id)
         {
-          return _context.GeneratingStation.Any(e => e.GeneratingStationId == id);
+          return (_context.GeneratingStation?.Any(e => e.GeneratingStationId == id)).GetValueOrDefault();
         }
     }
 }

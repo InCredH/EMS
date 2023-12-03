@@ -19,7 +19,7 @@ namespace EMS.Pages.GeneratingStations
             _context = context;
         }
 
-      public GeneratingStation GeneratingStation { get; set; }
+      public GeneratingStation GeneratingStation { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,12 +28,7 @@ namespace EMS.Pages.GeneratingStations
                 return NotFound();
             }
 
-            var generatingstation = await _context.GeneratingStation
-                .Include(g => g.GeneratingStationClassification)
-                .Include(g => g.GeneratingStationType)
-                .Include(g => g.Fuel)
-                .FirstOrDefaultAsync(m => m.GeneratingStationId == id);
-            
+            var generatingstation = await _context.GeneratingStation.FirstOrDefaultAsync(m => m.GeneratingStationId == id);
             if (generatingstation == null)
             {
                 return NotFound();

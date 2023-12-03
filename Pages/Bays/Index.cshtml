@@ -1,0 +1,66 @@
+@page
+@model EMS.Pages.Bays.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Bay[0].BayType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bay[0].IsFuture)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bay[0].ConnectingElement1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bay[0].ConnectingElement2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bay[0].Element)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bay[0].Voltage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Bay) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BayType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsFuture)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConnectingElement1.ElementId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConnectingElement2.ElementId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Element.ElementId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voltage.VoltageId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.BayId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.BayId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.BayId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

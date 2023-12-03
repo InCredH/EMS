@@ -1,0 +1,54 @@
+@page
+@model EMS.Pages.BusReactors.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BusReactor[0].MVARCapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusReactor[0].BusName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusReactor[0].Element)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BusReactor[0].Bus)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.BusReactor) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MVARCapacity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Element.ElementId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bus.BusId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.BusReactorId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.BusReactorId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.BusReactorId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

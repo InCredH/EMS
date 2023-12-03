@@ -1,0 +1,50 @@
+@page
+@model EMS.Pages.FilterBanks.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>FilterBank</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FilterBank.FilterBankId" />
+            <div class="form-group">
+                <label asp-for="FilterBank.VoltageId" class="control-label"></label>
+                <select asp-for="FilterBank.VoltageId" class="form-control" asp-items="ViewBag.VoltageId"></select>
+                <span asp-validation-for="FilterBank.VoltageId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilterBank.ElementId" class="control-label"></label>
+                <select asp-for="FilterBank.ElementId" class="form-control" asp-items="ViewBag.ElementId"></select>
+                <span asp-validation-for="FilterBank.ElementId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FilterBank.MVARCapacity" class="control-label"></label>
+                <input asp-for="FilterBank.MVARCapacity" class="form-control" />
+                <span asp-validation-for="FilterBank.MVARCapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="FilterBank.IsSwitchable" /> @Html.DisplayNameFor(model => model.FilterBank.IsSwitchable)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

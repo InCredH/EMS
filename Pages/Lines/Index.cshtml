@@ -1,0 +1,114 @@
+@page
+@model EMS.Pages.Lines.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].LineType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].CircuitNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].LineName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].Length)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].ConductorType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].AutoReclosure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].LineCircuitName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].SendingEndSPS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].ReceivingEndSPS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].FirstChargingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].Element)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].FromBus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].ToBus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Line[0].Voltage)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Line) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LineType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CircuitNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LineName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Length)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConductorType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AutoReclosure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LineCircuitName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SendingEndSPS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceivingEndSPS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstChargingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Element.ElementId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FromBus.BusId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToBus.BusId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voltage.VoltageId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.LineId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.LineId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.LineId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

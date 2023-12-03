@@ -269,5 +269,13 @@ namespace EMS.Data
         public DbSet<EMS.Models.Voltage> Voltage { get; set; }
 
         public DbSet<EMS.Models.HVDCPole> HVDCPole { get; set; } = default!;
+
+        public DbSet<EMS.Models.LineReactor> LineReactor { get; set; } = default!;
+
+        public DbSet<EMS.Models.FSC> FSC { get; set; } = default!;
+
+        public DbSet<EMS.Models.SVC> SVC { get; set; } = default!;
+
+        public DbSet<EMS.Models.Line> Line { get; set; } = default!;
     }
 }

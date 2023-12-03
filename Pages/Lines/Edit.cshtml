@@ -1,0 +1,100 @@
+@page
+@model EMS.Pages.Lines.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Line</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Line.LineId" />
+            <div class="form-group">
+                <label asp-for="Line.LineType" class="control-label"></label>
+                <input asp-for="Line.LineType" class="form-control" />
+                <span asp-validation-for="Line.LineType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Line.ElementId" class="control-label"></label>
+                <select asp-for="Line.ElementId" class="form-control" asp-items="ViewBag.ElementId"></select>
+                <span asp-validation-for="Line.ElementId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Line.FromBusId" class="control-label"></label>
+                <select asp-for="Line.FromBusId" class="form-control" asp-items="ViewBag.FromBusId"></select>
+                <span asp-validation-for="Line.FromBusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Line.ToBusId" class="control-label"></label>
+                <select asp-for="Line.ToBusId" class="form-control" asp-items="ViewBag.ToBusId"></select>
+                <span asp-validation-for="Line.ToBusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Line.VoltageId" class="control-label"></label>
+                <select asp-for="Line.VoltageId" class="form-control" asp-items="ViewBag.VoltageId"></select>
+                <span asp-validation-for="Line.VoltageId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Line.CircuitNumber" class="control-label"></label>
+                <input asp-for="Line.CircuitNumber" class="form-control" />
+                <span asp-validation-for="Line.CircuitNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Line.LineName" class="control-label"></label>
+                <input asp-for="Line.LineName" class="form-control" />
+                <span asp-validation-for="Line.LineName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Line.Length" class="control-label"></label>
+                <input asp-for="Line.Length" class="form-control" />
+                <span asp-validation-for="Line.Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Line.ConductorType" class="control-label"></label>
+                <input asp-for="Line.ConductorType" class="form-control" />
+                <span asp-validation-for="Line.ConductorType" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Line.AutoReclosure" /> @Html.DisplayNameFor(model => model.Line.AutoReclosure)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Line.LineCircuitName" class="control-label"></label>
+                <input asp-for="Line.LineCircuitName" class="form-control" />
+                <span asp-validation-for="Line.LineCircuitName" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Line.SendingEndSPS" /> @Html.DisplayNameFor(model => model.Line.SendingEndSPS)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Line.ReceivingEndSPS" /> @Html.DisplayNameFor(model => model.Line.ReceivingEndSPS)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Line.FirstChargingDate" class="control-label"></label>
+                <input asp-for="Line.FirstChargingDate" class="form-control" />
+                <span asp-validation-for="Line.FirstChargingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

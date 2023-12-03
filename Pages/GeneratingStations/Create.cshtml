@@ -29,22 +29,16 @@
                 <span asp-validation-for="GeneratingStation.MVARCapacity" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SelectedGeneratingStationClassificationId" class="control-label"></label>
-                <select asp-for="SelectedGeneratingStationClassificationId" asp-items="Model.GeneratingStationClassificationList" class="form-control">
-                    <option value="">-- Select Generating Station Classification --</option>
-                </select>
+                <label asp-for="GeneratingStation.GeneratingStationClassificationId" class="control-label"></label>
+                <select asp-for="GeneratingStation.GeneratingStationClassificationId" class ="form-control" asp-items="ViewBag.GeneratingStationClassificationId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="SelectedGeneratingStationTypeId" class="control-label"></label>
-                <select asp-for="SelectedGeneratingStationTypeId" asp-items="Model.GeneratingStationTypeList" class="form-control">
-                    <option value="">-- Select Generating Station Type --</option>
-                </select>
+                <label asp-for="GeneratingStation.GeneratingStationTypeId" class="control-label"></label>
+                <select asp-for="GeneratingStation.GeneratingStationTypeId" class ="form-control" asp-items="ViewBag.GeneratingStationTypeId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="SelectedFuelId" class="control-label"></label>
-                <select asp-for="SelectedFuelId" asp-items="Model.FuelList" class="form-control">
-                    <option value="">-- Select Fuel Type --</option>
-                </select>
+                <label asp-for="GeneratingStation.FuelId" class="control-label"></label>
+                <select asp-for="GeneratingStation.FuelId" class ="form-control" asp-items="ViewBag.FuelId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

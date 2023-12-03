@@ -1,0 +1,72 @@
+@page
+@model EMS.Pages.HVDCPoles.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HVDCPole[0].PoleType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVDCPole[0].PoleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVDCPole[0].PoleNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVDCPole[0].MaxFiringAngle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVDCPole[0].MinFiringAngle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVDCPole[0].Voltage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HVDCPole[0].Element)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.HVDCPole) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PoleType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PoleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PoleNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaxFiringAngle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinFiringAngle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Voltage.VoltageId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Element.ElementId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.HVDCPoleId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.HVDCPoleId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.HVDCPoleId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

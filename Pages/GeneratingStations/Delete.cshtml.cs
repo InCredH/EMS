@@ -20,7 +20,7 @@ namespace EMS.Pages.GeneratingStations
         }
 
         [BindProperty]
-      public GeneratingStation GeneratingStation { get; set; }
+      public GeneratingStation GeneratingStation { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
