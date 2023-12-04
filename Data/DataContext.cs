@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using EMS.Models;
 
 namespace EMS.Data
@@ -11,15 +12,9 @@ namespace EMS.Data
             Configuration = configuration;
         }
 
-        // public DataContext(DbContextOptions<DataContext> options, IConfiguration configuration)
-        //     : base(options)
-        // {
-        //     Configuration = configuration;
-        // }
-
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseNpgsql(Configuration.GetConnectionString("Supabase"));
+            options.UseNpgsql(Configuration?.GetConnectionString("Supabase"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

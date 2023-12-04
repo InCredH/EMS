@@ -2,6 +2,9 @@ using Microsoft.EntityFrameworkCore;
 using EMS.Data;
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("Supabase")));
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 
