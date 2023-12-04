@@ -3,6 +3,7 @@ using System;
 using EMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EMS.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20231203201931_BayUpdated")]
+    partial class BayUpdated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.11");
@@ -162,7 +165,7 @@ namespace EMS.Migrations
                     b.Property<string>("ElementType")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("LocationId")
+                    b.Property<int>("RegionId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("Substation1Id")
@@ -173,7 +176,7 @@ namespace EMS.Migrations
 
                     b.HasKey("ElementId");
 
-                    b.HasIndex("LocationId");
+                    b.HasIndex("RegionId");
 
                     b.HasIndex("Substation1Id");
 
@@ -377,9 +380,6 @@ namespace EMS.Migrations
 
                     b.Property<string>("PoleType")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("PoleTypeEnum")
-                        .HasColumnType("INTEGER");
 
                     b.Property<int>("VoltageId")
                         .HasColumnType("INTEGER");
@@ -784,9 +784,11 @@ namespace EMS.Migrations
 
             modelBuilder.Entity("EMS.Models.Element", b =>
                 {
-                    b.HasOne("EMS.Models.Location", "Location")
+                    b.HasOne("EMS.Models.Region", "Region")
                         .WithMany()
-                        .HasForeignKey("LocationId");
+                        .HasForeignKey("RegionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("EMS.Models.Substation", "Substation1")
                         .WithMany()
@@ -796,7 +798,7 @@ namespace EMS.Migrations
                         .WithMany()
                         .HasForeignKey("Substation2Id");
 
-                    b.Navigation("Location");
+                    b.Navigation("Region");
 
                     b.Navigation("Substation1");
 

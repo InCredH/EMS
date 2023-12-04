@@ -283,7 +283,9 @@ namespace EMS.Data
         public DbSet<EMS.Models.SVC> SVC { get; set; } = default!;
 
         public DbSet<EMS.Models.Line> Line { get; set; } = default!;
+
         public DbSet<EMS.Models.Element> Element { get; set; } = default!;
+
         public DbSet<EMS.Models.ElementOwner> ElementOwner { get; set; } = default!;
     }
 }

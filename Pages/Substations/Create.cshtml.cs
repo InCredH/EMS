@@ -1,6 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using EMS.Data;
 using EMS.Models;
 
 namespace EMS.Pages.Substations
@@ -16,8 +21,8 @@ namespace EMS.Pages.Substations
 
         public IActionResult OnGet()
         {
-        ViewData["LocationId"] = new SelectList(_context.Location, "LocationId", "LocationName");
-        ViewData["VoltageId"] = new SelectList(_context.Voltage, "VoltageId", "VoltageLevel");
+        ViewData["LocationId"] = new SelectList(_context.Location, "LocationId", "LocationId");
+        ViewData["VoltageId"] = new SelectList(_context.Voltage, "VoltageId", "VoltageId");
             return Page();
         }
 
@@ -32,8 +37,6 @@ namespace EMS.Pages.Substations
             {
                 return Page();
             }
-
-            Substation.SubstationName = $"{Substation.Location?.LocationName}-{Substation.Voltage?.VoltageLevel}";
 
             _context.Substation.Add(Substation);
             await _context.SaveChangesAsync();

@@ -19,6 +19,5 @@ namespace EMS.Models
         public Substation? Substation2 { get; set; }
         public Location? Location { get; set; }
         public ICollection<ElementOwner>? ElementOwners { get; set; }
-
     }
 }
