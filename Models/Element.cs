@@ -13,11 +13,11 @@ namespace EMS.Models
         public DateTime CommissioningDate { get; set; }
         [DataType(DataType.Date)]
         public DateTime DecommissioningDate { get; set; }
-        public int RegionId { get; set; }
+        public int? LocationId { get; set; }
 
         public Substation? Substation1 { get; set; }
         public Substation? Substation2 { get; set; }
-        public Region? Region { get; set; }
+        public Location? Location { get; set; }
         public ICollection<ElementOwner>? ElementOwners { get; set; }
     }
 }

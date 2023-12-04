@@ -13,6 +13,7 @@ namespace EMS.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Element Foreign Keys
+        
             modelBuilder.Entity<Bay>()
                 .HasOne(e => e.Element)
                 .WithMany()
@@ -196,6 +197,11 @@ namespace EMS.Data
                 .HasForeignKey(e => e.Substation2Id)
                 .IsRequired(false);
 
+            modelBuilder.Entity<Element>()
+                .HasOne(e=>e.Location)
+                .WithMany()
+                .HasForeignKey(e => e.LocationId)
+                .IsRequired(false);
             modelBuilder.Entity<Transformer>()
                 .HasOne(t => t.Voltage1)
                 .WithMany() 
@@ -277,9 +283,13 @@ namespace EMS.Data
         public DbSet<EMS.Models.SVC> SVC { get; set; } = default!;
 
         public DbSet<EMS.Models.Line> Line { get; set; } = default!;
+<<<<<<< HEAD
 
         public DbSet<EMS.Models.Element> Element { get; set; } = default!;
 
+=======
+        public DbSet<EMS.Models.Element> Element { get; set; } = default!;
+>>>>>>> main
         public DbSet<EMS.Models.ElementOwner> ElementOwner { get; set; } = default!;
     }
 }
