@@ -22,7 +22,7 @@ namespace EMS.Pages.Bays
             ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
             ViewData["VoltageId"] = new SelectList(_context.Voltage, "VoltageId", "VoltageLevel");
             ViewData["BayType"] = new SelectList(Enum.GetValues(typeof(BayType)));
-            ViewData["RegionId"] = new SelectList(_context.Set<Region>(), "RegionId", "RegionName");
+            ViewData["LocationId"] = new SelectList(_context.Set<Location>(), "LocationId", "LocationName");
             ViewData["Owners"] = new SelectList(_context.Set<Owner>(), "OwnerId", "OwnerName");
             return Page();
         }
