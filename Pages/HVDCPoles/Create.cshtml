@@ -13,13 +13,10 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="HVDCPole.ElementId" class="control-label"></label>
-                <select asp-for="HVDCPole.ElementId" class ="form-control" asp-items="ViewBag.ElementId"></select>
-            </div>
+            
             <div class="form-group">
                 <label asp-for="HVDCPole.PoleType" class="control-label"></label>
-                <input asp-for="HVDCPole.PoleType" class="form-control" />
+                <select asp-for="HVDCPole.PoleType" class="form-control" asp-items="ViewBag.PoleType" ></select>
                 <span asp-validation-for="HVDCPole.PoleType" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -27,9 +24,36 @@
                 <select asp-for="HVDCPole.VoltageId" class ="form-control" asp-items="ViewBag.VoltageId"></select>
             </div>
             <div class="form-group">
+                <label asp-for="Element.Substation1Id" class="control-label"></label>
+                <select asp-for="Element.Substation1Id" class="form-control" asp-items="ViewBag.Substation1Id"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Element.ElementOwners" class="control-label"></label>
+                <select name="Owners" asp-for="Element.ElementOwners" class="form-control" asp-items="ViewBag.Owners" multiple></select>
+            </div>
+            <div class="form-group">
                 <label asp-for="HVDCPole.PoleName" class="control-label"></label>
                 <input asp-for="HVDCPole.PoleName" class="form-control" />
                 <span asp-validation-for="HVDCPole.PoleName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.CommissioningDate" class="control-label"></label>
+                <input asp-for="Element.CommissioningDate" class="form-control" type="date" />
+                <span asp-validation-for="Element.CommissioningDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Element.DecommissioningDate" class="control-label"></label>
+                <input asp-for="Element.DecommissioningDate" class="form-control" type="date" />
+                <span asp-validation-for="Element.DecommissioningDate" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group">
+                <label asp-for="Element.LocationId" class="control-label">Location</label>
+                <select asp-for="Element.LocationId" class="form-control" asp-items="ViewBag.Locations"></select>
             </div>
             <div class="form-group">
                 <label asp-for="HVDCPole.PoleNumber" class="control-label"></label>
