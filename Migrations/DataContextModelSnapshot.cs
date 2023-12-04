@@ -159,7 +159,7 @@ namespace EMS.Migrations
                     b.Property<string>("ElementType")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("RegionId")
+                    b.Property<int?>("LocationId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("Substation1Id")
@@ -170,7 +170,7 @@ namespace EMS.Migrations
 
                     b.HasKey("ElementId");
 
-                    b.HasIndex("RegionId");
+                    b.HasIndex("LocationId");
 
                     b.HasIndex("Substation1Id");
 
@@ -647,9 +647,6 @@ namespace EMS.Migrations
                     b.Property<int>("ElementId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("LocationId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("MVACapacity")
                         .HasColumnType("INTEGER");
 
@@ -658,6 +655,9 @@ namespace EMS.Migrations
 
                     b.Property<string>("TransformerType")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("TransformerTypeEnum")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("Voltage1Id")
                         .HasColumnType("INTEGER");
@@ -668,8 +668,6 @@ namespace EMS.Migrations
                     b.HasKey("TransformerId");
 
                     b.HasIndex("ElementId");
-
-                    b.HasIndex("LocationId");
 
                     b.HasIndex("Voltage1Id");
 
@@ -778,11 +776,9 @@ namespace EMS.Migrations
 
             modelBuilder.Entity("EMS.Models.Element", b =>
                 {
-                    b.HasOne("EMS.Models.Region", "Region")
+                    b.HasOne("EMS.Models.Location", "Location")
                         .WithMany()
-                        .HasForeignKey("RegionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("LocationId");
 
                     b.HasOne("EMS.Models.Substation", "Substation1")
                         .WithMany()
@@ -792,7 +788,7 @@ namespace EMS.Migrations
                         .WithMany()
                         .HasForeignKey("Substation2Id");
 
-                    b.Navigation("Region");
+                    b.Navigation("Location");
 
                     b.Navigation("Substation1");
 
@@ -1103,12 +1099,6 @@ namespace EMS.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("EMS.Models.Location", "Location")
-                        .WithMany()
-                        .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("EMS.Models.Voltage", "Voltage1")
                         .WithMany()
                         .HasForeignKey("Voltage1Id")
@@ -1122,8 +1112,6 @@ namespace EMS.Migrations
                         .IsRequired();
 
                     b.Navigation("Element");
-
-                    b.Navigation("Location");
 
                     b.Navigation("Voltage1");
 

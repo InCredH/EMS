@@ -269,5 +269,7 @@ namespace EMS.Data
         public DbSet<EMS.Models.Voltage> Voltage { get; set; }
 
         public DbSet<EMS.Models.HVDCPole> HVDCPole { get; set; } = default!;
+        public DbSet<EMS.Models.Element> Element { get; set; } = default!;
+        public DbSet<EMS.Models.ElementOwner> ElementOwner { get; set; } = default!;
     }
 }

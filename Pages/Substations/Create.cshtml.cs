@@ -16,8 +16,8 @@ namespace EMS.Pages.Substations
 
         public IActionResult OnGet()
         {
-        ViewData["LocationId"] = new SelectList(_context.Location, "LocationId", "LocationName");
-        ViewData["VoltageId"] = new SelectList(_context.Voltage, "VoltageId", "VoltageLevel");
+            ViewData["LocationId"] = new SelectList(_context.Location, "LocationId", "LocationName");
+            ViewData["VoltageId"] = new SelectList(_context.Voltage, "VoltageId", "VoltageLevel");
             return Page();
         }
 

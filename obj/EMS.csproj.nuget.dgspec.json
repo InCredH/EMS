@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Harsh\\Desktop\\ems\\EMS\\EMS.csproj": {}
+    "/Users/anoragbhandarkar/Desktop/EMS/EMS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Harsh\\Desktop\\ems\\EMS\\EMS.csproj": {
+    "/Users/anoragbhandarkar/Desktop/EMS/EMS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Harsh\\Desktop\\ems\\EMS\\EMS.csproj",
+        "projectUniqueName": "/Users/anoragbhandarkar/Desktop/EMS/EMS.csproj",
         "projectName": "EMS",
-        "projectPath": "C:\\Users\\Harsh\\Desktop\\ems\\EMS\\EMS.csproj",
-        "packagesPath": "C:\\Users\\Harsh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Harsh\\Desktop\\ems\\EMS\\obj\\",
+        "projectPath": "/Users/anoragbhandarkar/Desktop/EMS/EMS.csproj",
+        "packagesPath": "/Users/anoragbhandarkar/.nuget/packages/",
+        "outputPath": "/Users/anoragbhandarkar/Desktop/EMS/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Harsh\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/anoragbhandarkar/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -41,6 +39,10 @@
           "targetAlias": "net7.0",
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.11, )"
             },
@@ -88,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
         }
       }
     }

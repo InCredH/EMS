@@ -1,0 +1,11 @@
+**/bin/Debug/net7.0/*
+**/obj/**
+**/.vs/**
+EMS.db
+EMS.db-shm
+EMS.sln
+EMS.db-wal
+EMS.db
+EMS.db-shm
+EMS.sln
+EMS.db-wal

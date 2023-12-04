@@ -1,0 +1,48 @@
+@page
+@model EMS.Pages.Compensators.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Compensator[0].PercentageVariableCompensation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Compensator[0].PercentageFixedCompensation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Compensator[0].Element)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Compensator) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PercentageVariableCompensation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PercentageFixedCompensation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Element.ElementId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CompensatorId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CompensatorId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CompensatorId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
