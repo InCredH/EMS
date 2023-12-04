@@ -38,10 +38,10 @@
                 @Html.DisplayFor(modelItem => item.SubstationType)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Voltage.VoltageLevel)
+                @Html.DisplayFor(modelItem => item.Voltage.VoltageId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Location.LocationName)
+                @Html.DisplayFor(modelItem => item.Location.LocationId)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.SubstationId">Edit</a> |

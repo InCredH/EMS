@@ -14,30 +14,52 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Bay.ElementId" class="control-label"></label>
-                <select asp-for="Bay.ElementId" class ="form-control" asp-items="ViewBag.ElementId"></select>
+                <label asp-for="Element.Substation1Id" class="control-label"></label>
+                <select asp-for="Element.Substation1Id" class ="form-control" asp-items="ViewBag.Substation1Id"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Bay.ConnectingElement1Id" class="control-label"></label>
+                <label asp-for="Element.ElementNumber" class="control-label">Bay Number</label>
+                <input asp-for="Element.ElementNumber" class="form-control" />
+                <span asp-validation-for="Element.ElementNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.CommissioningDate" class="control-label">Commissioning Date</label>
+                <input asp-for="Element.CommissioningDate" class="form-control" />
+                <span asp-validation-for="Element.CommissioningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.DecommissioningDate" class="control-label">De-Commissioning Date</label>
+                <input asp-for="Element.DecommissioningDate" class="form-control" />
+                <span asp-validation-for="Element.DecommissioningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bay.ConnectingElement1Id" class="control-label">Connecting Element 1</label>
                 <select asp-for="Bay.ConnectingElement1Id" class ="form-control" asp-items="ViewBag.ConnectingElement1Id"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Bay.ConnectingElement2Id" class="control-label"></label>
+                <label asp-for="Bay.ConnectingElement2Id" class="control-label">Connecting Element 1</label>
                 <select asp-for="Bay.ConnectingElement2Id" class ="form-control" asp-items="ViewBag.ConnectingElement2Id"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Bay.VoltageId" class="control-label"></label>
+                <label asp-for="Element.RegionId" class="control-label">Region</label>
+                <select asp-for="Element.RegionId" class ="form-control" asp-items="ViewBag.RegionId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bay.VoltageId" class="control-label">Voltage Level</label>
                 <select asp-for="Bay.VoltageId" class ="form-control" asp-items="ViewBag.VoltageId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Bay.BayType" class="control-label"></label>
-                <input asp-for="Bay.BayType" class="form-control" />
-                <span asp-validation-for="Bay.BayType" class="text-danger"></span>
+                <label asp-for="Bay.BayTypeEnum" class="control-label">Bay Type</label>
+                <select asp-for="Bay.BayTypeEnum" class="form-control" asp-items="ViewBag.BayType"></select>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Bay.IsFuture" /> @Html.DisplayNameFor(model => model.Bay.IsFuture)
                 </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.ElementOwners" class="control-label">Owners</label>
+                <select name = "Owners" asp-for="Element.ElementOwners" class="form-control" asp-items="ViewBag.Owners" multiple></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
