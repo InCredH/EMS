@@ -17,19 +17,19 @@
                 @Html.DisplayNameFor(model => model.Transformer[0].TransformerName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Transformer[0].TransformerType)
+                @Html.DisplayNameFor(model => model.Transformer[0].MVACapacity)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Transformer[0].MVACapacity)
+                @Html.DisplayNameFor(model => model.Transformer[0].TransformerTypeEnum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Transformer[0].TransformerType)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Transformer[0].Voltage1)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Transformer[0].Voltage2)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Transformer[0].Location)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Transformer[0].Element)
@@ -44,19 +44,19 @@
                 @Html.DisplayFor(modelItem => item.TransformerName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TransformerType)
+                @Html.DisplayFor(modelItem => item.MVACapacity)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MVACapacity)
+                @Html.DisplayFor(modelItem => item.TransformerTypeEnum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransformerType)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Voltage1.VoltageId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Voltage2.VoltageId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Location.LocationId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Element.ElementId)

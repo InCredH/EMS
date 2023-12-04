@@ -25,11 +25,6 @@
                 <span asp-validation-for="Transformer.TransformerName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Transformer.TransformerType" class="control-label"></label>
-                <input asp-for="Transformer.TransformerType" class="form-control" />
-                <span asp-validation-for="Transformer.TransformerType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Transformer.Voltage1Id" class="control-label"></label>
                 <select asp-for="Transformer.Voltage1Id" class="form-control" asp-items="ViewBag.Voltage1Id"></select>
                 <span asp-validation-for="Transformer.Voltage1Id" class="text-danger"></span>
@@ -40,14 +35,19 @@
                 <span asp-validation-for="Transformer.Voltage2Id" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Transformer.LocationId" class="control-label"></label>
-                <select asp-for="Transformer.LocationId" class="form-control" asp-items="ViewBag.LocationId"></select>
-                <span asp-validation-for="Transformer.LocationId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Transformer.MVACapacity" class="control-label"></label>
                 <input asp-for="Transformer.MVACapacity" class="form-control" />
                 <span asp-validation-for="Transformer.MVACapacity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transformer.TransformerTypeEnum" class="control-label"></label>
+                <select asp-for="Transformer.TransformerTypeEnum" class="form-control"></select>
+                <span asp-validation-for="Transformer.TransformerTypeEnum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Transformer.TransformerType" class="control-label"></label>
+                <input asp-for="Transformer.TransformerType" class="form-control" />
+                <span asp-validation-for="Transformer.TransformerType" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

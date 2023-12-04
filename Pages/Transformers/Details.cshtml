@@ -18,16 +18,22 @@
             @Html.DisplayFor(model => model.Transformer.TransformerName)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Transformer.TransformerType)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Transformer.TransformerType)
-        </dd>
-        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Transformer.MVACapacity)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Transformer.MVACapacity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Transformer.TransformerTypeEnum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Transformer.TransformerTypeEnum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Transformer.TransformerType)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Transformer.TransformerType)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Transformer.Voltage1)
@@ -40,12 +46,6 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Transformer.Voltage2.VoltageId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Transformer.Location)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Transformer.Location.LocationId)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Transformer.Element)
