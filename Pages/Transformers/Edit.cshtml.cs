@@ -36,8 +36,7 @@ namespace EMS.Pages.Transformers
                 return NotFound();
             }
             Transformer = transformer;
-           ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
-           ViewData["LocationId"] = new SelectList(_context.Location, "LocationId", "LocationId");
+           ViewData["ElementId"] = new SelectList(_context.Element, "ElementId", "ElementId");
            ViewData["Voltage1Id"] = new SelectList(_context.Voltage, "VoltageId", "VoltageId");
            ViewData["Voltage2Id"] = new SelectList(_context.Voltage, "VoltageId", "VoltageId");
             return Page();

@@ -27,7 +27,6 @@ namespace EMS.Pages.Transformers
             {
                 Transformer = await _context.Transformer
                 .Include(t => t.Element)
-                .Include(t => t.Location)
                 .Include(t => t.Voltage1)
                 .Include(t => t.Voltage2).ToListAsync();
             }
