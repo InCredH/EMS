@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using EMS.Models;
-using DotNetEnv;
 
 namespace EMS.Data
 {
@@ -14,7 +14,7 @@ namespace EMS.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseNpgsql(Configuration.GetConnectionString("Supabase"));
+            options.UseNpgsql(Configuration?.GetConnectionString("Supabase"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

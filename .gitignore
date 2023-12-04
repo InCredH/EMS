@@ -1,4 +1,4 @@
-appsettings.
+appsettings.json
 .env
 **/bin/Debug/net7.0/*
 **/obj/**
