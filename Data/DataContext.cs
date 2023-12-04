@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using EMS.Models;
+using DotNetEnv;
 
 namespace EMS.Data
 {
@@ -10,12 +11,6 @@ namespace EMS.Data
         {
             Configuration = configuration;
         }
-
-        // public DataContext(DbContextOptions<DataContext> options, IConfiguration configuration)
-        //     : base(options)
-        // {
-        //     Configuration = configuration;
-        // }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
