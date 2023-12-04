@@ -5,15 +5,26 @@ namespace EMS.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext(DbContextOptions<DataContext> options)
-            : base(options)
+        protected readonly IConfiguration? Configuration;
+        public DataContext(IConfiguration configuration)
         {
+            Configuration = configuration;
+        }
+
+        // public DataContext(DbContextOptions<DataContext> options, IConfiguration configuration)
+        //     : base(options)
+        // {
+        //     Configuration = configuration;
+        // }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options.UseNpgsql(Configuration.GetConnectionString("Supabase"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Element Foreign Keys
-        
             modelBuilder.Entity<Bay>()
                 .HasOne(e => e.Element)
                 .WithMany()
@@ -198,37 +209,37 @@ namespace EMS.Data
                 .IsRequired(false);
 
             modelBuilder.Entity<Element>()
-                .HasOne(e=>e.Location)
+                .HasOne(e => e.Location)
                 .WithMany()
                 .HasForeignKey(e => e.LocationId)
                 .IsRequired(false);
             modelBuilder.Entity<Transformer>()
                 .HasOne(t => t.Voltage1)
-                .WithMany() 
+                .WithMany()
                 .HasForeignKey(t => t.Voltage1Id);
 
             modelBuilder.Entity<Transformer>()
-                .HasOne(t => t.Voltage2) 
-                .WithMany() 
+                .HasOne(t => t.Voltage2)
+                .WithMany()
                 .HasForeignKey(t => t.Voltage2Id);
 
             modelBuilder.Entity<Bay>()
-                .HasOne(b => b.ConnectingElement1)       
-                .WithMany()                   
-                .HasForeignKey(b => b.ConnectingElement1Id) 
-                .OnDelete(DeleteBehavior.Restrict); 
+                .HasOne(b => b.ConnectingElement1)
+                .WithMany()
+                .HasForeignKey(b => b.ConnectingElement1Id)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Bay>()
-                .HasOne(b => b.ConnectingElement2)       
-                .WithMany()                   
-                .HasForeignKey(b => b.ConnectingElement2Id) 
-                .OnDelete(DeleteBehavior.Restrict); 
+                .HasOne(b => b.ConnectingElement2)
+                .WithMany()
+                .HasForeignKey(b => b.ConnectingElement2Id)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Bay>()
                 .HasOne(b => b.Voltage)
-                .WithMany()                   
-                .HasForeignKey(b => b.VoltageId) 
-                .OnDelete(DeleteBehavior.Restrict); 
+                .WithMany()
+                .HasForeignKey(b => b.VoltageId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<HVDCPole>()
                 .HasOne(h => h.Voltage)
