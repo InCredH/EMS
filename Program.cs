@@ -4,8 +4,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DataContextSQLite") ?? throw new InvalidOperationException("Connection string 'DataContext' not found.")));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
