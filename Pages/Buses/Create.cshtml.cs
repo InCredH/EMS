@@ -46,6 +46,13 @@ namespace EMS.Pages.Buses
             // Set the element data
             Element.ElementType = "Bus";
 
+            //Changing the dates to UTC
+            DateTime Comm_utcDateTime = Element.CommissioningDate.ToUniversalTime();
+            DateTime DeComm_utcDateTime = Element.DecommissioningDate.ToUniversalTime();
+
+            Element.CommissioningDate = Comm_utcDateTime;
+            Element.DecommissioningDate = DeComm_utcDateTime;
+
             // Add the element to the context
             _context.Element.Add(Element);
 
