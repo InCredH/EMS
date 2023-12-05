@@ -37,7 +37,7 @@ namespace EMS.Pages.BusReactors
             }
             BusReactor = busreactor;
            ViewData["BusId"] = new SelectList(_context.Bus, "BusId", "BusId");
-           ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
+           ViewData["ElementId"] = new SelectList(_context.Element, "ElementId", "ElementId");
             return Page();
         }
 

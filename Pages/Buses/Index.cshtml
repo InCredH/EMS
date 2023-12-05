@@ -14,13 +14,16 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Bus[0].BusName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bus[0].BusTypeEnum)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Bus[0].BusType)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Bus[0].Element)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Bus[0].Substation)
             </th>
             <th></th>
         </tr>
@@ -29,13 +32,16 @@
 @foreach (var item in Model.Bus) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.BusName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusTypeEnum)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.BusType)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Element.ElementId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Substation.SubstationId)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.BusId">Edit</a> |

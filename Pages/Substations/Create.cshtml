@@ -14,22 +14,26 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Substation.VoltageId" class="control-label"></label>
+                <label asp-for="Substation.VoltageId" class="control-label">Voltage Level</label>
                 <select asp-for="Substation.VoltageId" class ="form-control" asp-items="ViewBag.VoltageId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Substation.LocationId" class="control-label"></label>
+                <label asp-for="Substation.LocationId" class="control-label">Location Name</label>
                 <select asp-for="Substation.LocationId" class ="form-control" asp-items="ViewBag.LocationId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Substation.SubstationName" class="control-label"></label>
+                <label asp-for="Substation.SubstationName" class="control-label">Substation Name</label>
                 <input asp-for="Substation.SubstationName" class="form-control" />
                 <span asp-validation-for="Substation.SubstationName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Substation.SubstationType" class="control-label"></label>
-                <input asp-for="Substation.SubstationType" class="form-control" />
+                <label asp-for="Substation.SubstationType" class="control-label">Substation Type</label>
+                <select asp-for="Substation.SubstationType" class="form-control" asp-items="ViewBag.SubstationType"></select>
                 <span asp-validation-for="Substation.SubstationType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Owner.OwnerSubstations" class="control-label">Owners</label>
+                <select name = "Owners" asp-for="Owner.OwnerSubstations" class="form-control" asp-items="ViewBag.Owners" multiple></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

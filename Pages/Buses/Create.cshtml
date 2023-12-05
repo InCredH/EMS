@@ -14,17 +14,40 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Bus.ElementId" class="control-label"></label>
-                <select asp-for="Bus.ElementId" class ="form-control" asp-items="ViewBag.ElementId"></select>
+                <label asp-for="Element.Substation1Id" class="control-label"></label>
+                <select asp-for="Element.Substation1Id" class ="form-control" asp-items="ViewBag.Substation1Id"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Bus.SubstationId" class="control-label"></label>
-                <select asp-for="Bus.SubstationId" class ="form-control" asp-items="ViewBag.SubstationId"></select>
+                <label asp-for="Element.ElementNumber" class="control-label">Bus Number</label>
+                <input asp-for="Element.ElementNumber" class="form-control" />
+                <span asp-validation-for="Element.ElementNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Bus.BusType" class="control-label"></label>
-                <input asp-for="Bus.BusType" class="form-control" />
-                <span asp-validation-for="Bus.BusType" class="text-danger"></span>
+                <label asp-for="Element.CommissioningDate" class="control-label">Commissioning Date</label>
+                <input asp-for="Element.CommissioningDate" class="form-control" />
+                <span asp-validation-for="Element.CommissioningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.DecommissioningDate" class="control-label">De-Commissioning Date</label>
+                <input asp-for="Element.DecommissioningDate" class="form-control" />
+                <span asp-validation-for="Element.DecommissioningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.LocationId" class="control-label">Location</label>
+                <select asp-for="Element.LocationId" class ="form-control" asp-items="ViewBag.LocationId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bus.BusName" class="control-label">Bus Name</label>
+                <input asp-for="Bus.BusName" class="form-control" />
+                <span asp-validation-for="Bus.BusName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bus.BusTypeEnum" class="control-label">Bus Type</label>
+                <select asp-for="Bus.BusTypeEnum" class="form-control" asp-items="ViewBag.BusType"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.ElementOwners" class="control-label">Owners</label>
+                <select name = "Owners" asp-for="Element.ElementOwners" class="form-control" asp-items="ViewBag.Owners" multiple></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
