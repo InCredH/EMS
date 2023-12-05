@@ -16,7 +16,7 @@ namespace EMS.Pages.Transformers
        //
        public IActionResult OnGet()
        {
-           ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
+        //    ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
            ViewData["TransformerType"] = new SelectList(Enum.GetValues(typeof(TransformerType)));
            ViewData["LocationId"] = new SelectList(_context.Set<Location>(), "LocationId", "LocationName");
            ViewData["Voltage1Id"] = new SelectList(_context.Set<Voltage>(), "VoltageId", "VoltageLevel");
@@ -47,8 +47,12 @@ namespace EMS.Pages.Transformers
                return Page();
            }
            Element.ElementType = "Transformer";
+           //change dates to UTC
+            DateTime Comm_utcDateTime = Element.CommissioningDate.ToUniversalTime();
+            DateTime DeComm_utcDateTime = Element.DecommissioningDate.ToUniversalTime();
 
-
+            Element.CommissioningDate = Comm_utcDateTime;
+            Element.DecommissioningDate = DeComm_utcDateTime;
            // Add the element to the context
            _context.Element.Add(Element);
 
@@ -63,6 +67,21 @@ namespace EMS.Pages.Transformers
 
            // Set the elementId in the bay
            Transformer.ElementId = lastElementId;
+
+           // Create ElementOwner objects and add to context for the many-to-many relationship
+            foreach (var ownerId in Request.Form["Owners"]) // Assuming "Owners" is the name of the multiple select control
+            {
+                Console.WriteLine("OwnerId: "+ownerId);
+                var elementOwner = new ElementOwner
+                {
+                    ElementId = lastElementId,
+                    OwnerId = Convert.ToInt32(ownerId) // Assuming OwnerId is an integer
+                };
+
+                _context.ElementOwner.Add(elementOwner);
+                await _context.SaveChangesAsync();
+            }
+
           
            _context.Transformer.Add(Transformer);
            await _context.SaveChangesAsync();
