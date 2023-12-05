@@ -3,6 +3,7 @@ namespace EMS.Models
     public class Compensator
     {
         public int CompensatorId { get; set; }
+        public string? CompensatorName {get; set;}
         public int ElementId { get; set; }
         public int PercentageVariableCompensation { get; set; }
         public int PercentageFixedCompensation { get; set; }
