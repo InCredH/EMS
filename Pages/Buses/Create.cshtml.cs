@@ -45,6 +45,7 @@ namespace EMS.Pages.Buses
             }
             // Set the element data
             Element.ElementType = "Bus";
+           
 
             //Changing the dates to UTC
             DateTime Comm_utcDateTime = Element.CommissioningDate.ToUniversalTime();

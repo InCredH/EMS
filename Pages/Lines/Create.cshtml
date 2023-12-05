@@ -13,26 +13,22 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
                 <label asp-for="Line.LineType" class="control-label"></label>
-                <input asp-for="Line.LineType" class="form-control" />
-                <span asp-validation-for="Line.LineType" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Line.ElementId" class="control-label"></label>
-                <select asp-for="Line.ElementId" class ="form-control" asp-items="ViewBag.ElementId"></select>
+                <select asp-for="Line.LineType" class="form-control" asp-items="ViewBag.LineType"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Line.FromBusId" class="control-label"></label>
-                <select asp-for="Line.FromBusId" class ="form-control" asp-items="ViewBag.FromBusId"></select>
+                <select asp-for="Line.FromBusId" class="form-control" asp-items="ViewBag.FromBusId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Line.ToBusId" class="control-label"></label>
-                <select asp-for="Line.ToBusId" class ="form-control" asp-items="ViewBag.ToBusId"></select>
+                <select asp-for="Line.ToBusId" class="form-control" asp-items="ViewBag.ToBusId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Line.VoltageId" class="control-label"></label>
-                <select asp-for="Line.VoltageId" class ="form-control" asp-items="ViewBag.VoltageId"></select>
+                <select asp-for="Line.VoltageId" class="form-control" asp-items="ViewBag.VoltageId"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Line.CircuitNumber" class="control-label"></label>
@@ -76,8 +72,31 @@
             </div>
             <div class="form-group">
                 <label asp-for="Line.FirstChargingDate" class="control-label"></label>
-                <input asp-for="Line.FirstChargingDate" class="form-control" />
+                <input asp-for="Line.FirstChargingDate" class="form-control" type="date"/>
                 <span asp-validation-for="Line.FirstChargingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.CommissioningDate" class="control-label"></label>
+                <input asp-for="Element.CommissioningDate" class="form-control" type="date" />
+                <span asp-validation-for="Element.CommissioningDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Element.DecommissioningDate" class="control-label"></label>
+                <input asp-for="Element.DecommissioningDate" class="form-control" type="date" />
+                <span asp-validation-for="Element.DecommissioningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.LocationId" class="control-label">Location</label>
+                <select asp-for="Element.LocationId" class="form-control" asp-items="ViewBag.Locations"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.Substation1Id" class="control-label"></label>
+                <select asp-for="Element.Substation1Id" class="form-control" asp-items="ViewBag.Substation1Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.ElementOwners" class="control-label"></label>
+                <select name="Owners" asp-for="Element.ElementOwners" class="form-control" asp-items="ViewBag.Owners" multiple></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
