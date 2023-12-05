@@ -26,8 +26,7 @@ namespace EMS.Pages.Buses
             if (_context.Bus != null)
             {
                 Bus = await _context.Bus
-                .Include(b => b.Element)
-                .Include(b => b.Substation).ToListAsync();
+                .Include(b => b.Element).ToListAsync();
             }
         }
     }

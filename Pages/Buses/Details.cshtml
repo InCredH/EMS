@@ -12,6 +12,18 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bus.BusName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bus.BusName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Bus.BusTypeEnum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Bus.BusTypeEnum)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Bus.BusType)
         </dt>
         <dd class="col-sm-10">
@@ -22,12 +34,6 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Bus.Element.ElementId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Bus.Substation)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Bus.Substation.SubstationId)
         </dd>
     </dl>
 </div>

@@ -36,8 +36,7 @@ namespace EMS.Pages.Buses
                 return NotFound();
             }
             Bus = bus;
-           ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
-           ViewData["SubstationId"] = new SelectList(_context.Substation, "SubstationId", "SubstationId");
+           ViewData["ElementId"] = new SelectList(_context.Element, "ElementId", "ElementId");
             return Page();
         }
 

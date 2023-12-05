@@ -30,11 +30,6 @@ namespace EMS.Data
                 .WithMany()
                 .HasForeignKey(e => e.ElementId);
 
-            modelBuilder.Entity<Bus>()
-                .HasOne(e => e.Substation)
-                .WithMany()
-                .HasForeignKey(e => e.SubstationId);
-
             modelBuilder.Entity<BusReactor>()
                 .HasOne(e => e.Element)
                 .WithMany()
@@ -293,5 +288,9 @@ namespace EMS.Data
         public DbSet<EMS.Models.Element> Element { get; set; } = default!;
 
         public DbSet<EMS.Models.ElementOwner> ElementOwner { get; set; } = default!;
+
+        public DbSet<EMS.Models.OwnerSubstation> OwnerSubstation { get; set; } = default!;
+
+        
     }
 }
