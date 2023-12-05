@@ -1,9 +1,10 @@
 namespace EMS.Models
 {
+    
     public class Line
     {
         public int LineId { get; set; }
-        public string? LineType { get; set; }
+        public string? LineType {  get; set; }
         public int ElementId { get; set; }
         public int FromBusId { get; set; }
         public int ToBusId { get; set; }
