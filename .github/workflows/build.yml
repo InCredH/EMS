@@ -1,0 +1,25 @@
+name: Dotnet build
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: ['7.0.x']
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup dotnet ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
+      - name: Display dotnet version
+        run: dotnet --version
+      - name: Pull the secret file
+        run: echo {{ secrets.APP_SETTING }} >> appsettings.json
+      - name: Build project to check errors
+        run: dotnet run --build
+
