@@ -1,0 +1,18 @@
+name: Check for binary files
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dotnet-version: ['7.0.x']
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for binary files
+        run: chmod +x ./hack/binary_files_check.sh; ./hack/binary_files_check.sh
+
+
