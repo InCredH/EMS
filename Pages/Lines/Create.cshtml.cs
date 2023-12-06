@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using EMS.Data;
 using EMS.Models;
 
 namespace EMS.Pages.Lines
@@ -21,11 +16,12 @@ namespace EMS.Pages.Lines
 
         public IActionResult OnGet()
         {
-        ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
-        ViewData["FromBusId"] = new SelectList(_context.Bus, "BusId", "BusName");
-        ViewData["ToBusId"] = new SelectList(_context.Bus, "BusId", "BusName");
-        ViewData["VoltageId"] = new SelectList(_context.Voltage, "VoltageId", "VoltageLevel");
+            ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
+            ViewData["FromBusId"] = new SelectList(_context.Bus, "BusId", "BusName");
+            ViewData["ToBusId"] = new SelectList(_context.Bus, "BusId", "BusName");
+            ViewData["VoltageId"] = new SelectList(_context.Voltage, "VoltageId", "VoltageLevel");
             ViewData["Substation1Id"] = new SelectList(_context.Set<Substation>(), "SubstationId", "SubstationName");
+            ViewData["Substation2Id"] = new SelectList(_context.Set<Substation>(), "SubstationId", "SubstationName");
             ViewData["Owners"] = new SelectList(_context.Set<Owner>(), "OwnerId", "OwnerName");
             ViewData["Locations"] = new SelectList(_context.Set<Location>(), "LocationId", "LocationName");
             ViewData["LineType"] = new SelectList(new List<string> { "AC Transmission Line", "HVDC Line" });
@@ -44,6 +40,20 @@ namespace EMS.Pages.Lines
             {
                 return Page();
             }
+            if(Element == null) {
+                Console.WriteLine("Element is null");
+                return Page();
+            }
+
+            //Substation1 and Substation2 should not have the same location
+            var substation1Id = await _context.Substation.FindAsync(Element.Substation1Id);
+            var substation2Id = await _context.Substation.FindAsync(Element.Substation2Id);
+
+            if(substation1Id?.LocationId == substation2Id?.LocationId) {
+                ModelState.AddModelError("Element.Substation1Id", "Substation1 and Substation2 should not have the same location");
+                ModelState.AddModelError("Element.Substation2Id", "Substation1 and Substation2 should not have the same location");
+                return Page();
+            }            
             Element.ElementType = "Line";
             DateTime Comm_utcDateTime = Element.CommissioningDate.ToUniversalTime();
             DateTime DeComm_utcDateTime = Element.DecommissioningDate.ToUniversalTime();
