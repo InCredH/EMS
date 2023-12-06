@@ -36,7 +36,7 @@ namespace EMS.Pages.FilterBanks
                 return NotFound();
             }
             FilterBank = filterbank;
-           ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
+           ViewData["ElementId"] = new SelectList(_context.Element, "ElementId", "ElementId");
            ViewData["VoltageId"] = new SelectList(_context.Voltage, "VoltageId", "VoltageId");
             return Page();
         }
