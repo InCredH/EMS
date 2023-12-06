@@ -36,9 +36,8 @@ namespace EMS.Pages.LineReactors
                 return NotFound();
             }
             LineReactor = linereactor;
-           ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
+           ViewData["ElementId"] = new SelectList(_context.Element, "ElementId", "ElementId");
            ViewData["LineId"] = new SelectList(_context.Line, "LineId", "LineId");
-           ViewData["SubstationId"] = new SelectList(_context.Substation, "SubstationId", "SubstationId");
             return Page();
         }
 

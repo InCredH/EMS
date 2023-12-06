@@ -14,10 +14,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.LineReactor[0].Element)
+                @Html.DisplayNameFor(model => model.LineReactor[0].MVARCapacity)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LineReactor[0].Substation)
+                @Html.DisplayNameFor(model => model.LineReactor[0].LineReactorName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LineReactor[0].Element)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.LineReactor[0].Line)
@@ -29,10 +32,13 @@
 @foreach (var item in Model.LineReactor) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Element.ElementId)
+                @Html.DisplayFor(modelItem => item.MVARCapacity)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Substation.SubstationId)
+                @Html.DisplayFor(modelItem => item.LineReactorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Element.ElementId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Line.LineId)

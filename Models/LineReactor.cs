@@ -4,11 +4,11 @@ namespace EMS.Models
     {
         public int LineReactorId { get; set; }
         public int ElementId { get; set; }
-        public int SubstationId { get; set; }
         public int LineId { get; set; }
-
+        public int MVARCapacity { get; set; }
+        public String LineReactorName { get; set; }
         public Element? Element { get; set; }
-        public Substation? Substation { get; set; }
+        
         public Line? Line { get; set; }
     }
 }

@@ -22,9 +22,9 @@ namespace EMS.Pages.Lines
         public IActionResult OnGet()
         {
         ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
-        ViewData["FromBusId"] = new SelectList(_context.Bus, "BusId", "BusId");
-        ViewData["ToBusId"] = new SelectList(_context.Bus, "BusId", "BusId");
-        ViewData["VoltageId"] = new SelectList(_context.Voltage, "VoltageId", "VoltageId");
+        ViewData["FromBusId"] = new SelectList(_context.Bus, "BusId", "BusName");
+        ViewData["ToBusId"] = new SelectList(_context.Bus, "BusId", "BusName");
+        ViewData["VoltageId"] = new SelectList(_context.Voltage, "VoltageId", "VoltageLevel");
             ViewData["Substation1Id"] = new SelectList(_context.Set<Substation>(), "SubstationId", "SubstationName");
             ViewData["Owners"] = new SelectList(_context.Set<Owner>(), "OwnerId", "OwnerName");
             ViewData["Locations"] = new SelectList(_context.Set<Location>(), "LocationId", "LocationName");
@@ -44,7 +44,7 @@ namespace EMS.Pages.Lines
             {
                 return Page();
             }
-            Element.ElementType = "HVDCPole";
+            Element.ElementType = "Line";
             DateTime Comm_utcDateTime = Element.CommissioningDate.ToUniversalTime();
             DateTime DeComm_utcDateTime = Element.DecommissioningDate.ToUniversalTime();
 
