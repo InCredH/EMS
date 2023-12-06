@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using EMS.Data;
 using EMS.Models;
 
 namespace EMS.Pages.LineReactors
@@ -21,9 +16,7 @@ namespace EMS.Pages.LineReactors
 
         public IActionResult OnGet()
         {
-
             ViewData["LineId"] = new SelectList(_context.Line, "LineId", "LineName");
-
             ViewData["Substation1Id"] = new SelectList(_context.Set<Substation>(), "SubstationId", "SubstationName");
             ViewData["Owners"] = new SelectList(_context.Set<Owner>(), "OwnerId", "OwnerName");
             ViewData["Locations"] = new SelectList(_context.Set<Location>(), "LocationId", "LocationName");
