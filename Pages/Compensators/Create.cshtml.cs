@@ -21,7 +21,10 @@ namespace EMS.Pages.Compensators
 
         public IActionResult OnGet()
         {
-        ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
+            // ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
+            ViewData["LocationId"] = new SelectList(_context.Set<Location>(), "LocationId", "LocationName");
+            ViewData["Substation1Id"] = new SelectList(_context.Set<Substation>(), "SubstationId", "SubstationName");
+            ViewData["Owners"] = new SelectList(_context.Set<Owner>(), "OwnerId", "OwnerName");
             return Page();
         }
 

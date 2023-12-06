@@ -95,10 +95,7 @@ namespace EMS.Data
                 .WithMany()
                 .HasForeignKey(e => e.ElementId);
 
-            modelBuilder.Entity<LineReactor>()
-                .HasOne(e => e.Substation)
-                .WithMany()
-                .HasForeignKey(e => e.SubstationId);
+            
 
             modelBuilder.Entity<LineReactor>()
                 .HasOne(e => e.Line)

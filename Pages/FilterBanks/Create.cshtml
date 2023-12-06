@@ -14,12 +14,27 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="FilterBank.VoltageId" class="control-label"></label>
-                <select asp-for="FilterBank.VoltageId" class ="form-control" asp-items="ViewBag.VoltageId"></select>
+                <label asp-for="Element.ElementNumber" class="control-label">FilterBank Number</label>
+                <input asp-for="Element.ElementNumber" class="form-control" />
+                <span asp-validation-for="Element.ElementNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="FilterBank.VoltageId" class="control-label">Voltage Level</label>
+                <select asp-for="FilterBank.VoltageId" class ="form-control" asp-items="ViewBag.VoltageId"></select>
+            </div>
+            @* <div class="form-group">
                 <label asp-for="FilterBank.ElementId" class="control-label"></label>
                 <select asp-for="FilterBank.ElementId" class ="form-control" asp-items="ViewBag.ElementId"></select>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Element.CommissioningDate" class="control-label">Commissioning Date</label>
+                <input asp-for="Element.CommissioningDate" class="form-control" />
+                <span asp-validation-for="Element.CommissioningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.DecommissioningDate" class="control-label">De-Commissioning Date</label>
+                <input asp-for="Element.DecommissioningDate" class="form-control" />
+                <span asp-validation-for="Element.DecommissioningDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="FilterBank.MVARCapacity" class="control-label"></label>
@@ -30,6 +45,18 @@
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="FilterBank.IsSwitchable" /> @Html.DisplayNameFor(model => model.FilterBank.IsSwitchable)
                 </label>
+            </div>
+            <div class="form-group">
+               <label asp-for="Element.Substation1Id" class="control-label">Substation 1 </label>
+               <select asp-for="Element.Substation1Id" class ="form-control" asp-items="ViewBag.Substation1Id"></select>
+           </div>
+            <div class="form-group">
+               <label asp-for="Element.LocationId" class="control-label">Location</label>
+               <select asp-for="Element.LocationId" class ="form-control" asp-items="ViewBag.LocationId"></select>
+           </div>
+           <div class="form-group">
+                <label asp-for="Element.ElementOwners" class="control-label">Owners</label>
+                <select name = "Owners" asp-for="Element.ElementOwners" class="form-control" asp-items="ViewBag.Owners" multiple></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
