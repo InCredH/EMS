@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using EMS.Data;
 using EMS.Models;
 
 namespace EMS.Pages.LineReactors
@@ -21,9 +16,7 @@ namespace EMS.Pages.LineReactors
 
         public IActionResult OnGet()
         {
-
             ViewData["LineId"] = new SelectList(_context.Line, "LineId", "LineName");
-
             ViewData["Substation1Id"] = new SelectList(_context.Set<Substation>(), "SubstationId", "SubstationName");
             ViewData["Owners"] = new SelectList(_context.Set<Owner>(), "OwnerId", "OwnerName");
             ViewData["Locations"] = new SelectList(_context.Set<Location>(), "LocationId", "LocationName");
@@ -41,6 +34,24 @@ namespace EMS.Pages.LineReactors
         {
             if (!ModelState.IsValid || _context.LineReactor == null || LineReactor == null)
             {
+                return Page();
+            }
+            var associatedElementIds = _context.Line
+                .Where(l => l.LineId == LineReactor.LineId)
+                .Select(l => l.ElementId)
+                .FirstOrDefault();
+            var substation1Id=_context.Element
+                .Where(e=>e.ElementId==associatedElementIds)
+                .Select (e => e.Substation1Id)
+                .FirstOrDefault();
+            var substation2Id = _context.Element
+                .Where(e => e.ElementId == associatedElementIds)
+                .Select(e => e.Substation2Id)
+                .FirstOrDefault();
+
+            if(Element.Substation1Id!=substation1Id || Element.Substation2Id != substation2Id)
+            {
+                ModelState.AddModelError("Element.Substation1Id", "Substation1Id must be one of the associated Substations for the selected Line.");
                 return Page();
             }
             Element.ElementType = "Line Reactor";
