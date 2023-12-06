@@ -36,7 +36,7 @@ namespace EMS.Pages.SubFilterBanks
                 return NotFound();
             }
             SubFilterBank = subfilterbank;
-           ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
+           ViewData["ElementId"] = new SelectList(_context.Element, "ElementId", "ElementId");
            ViewData["FilterBankId"] = new SelectList(_context.FilterBank, "FilterBankId", "FilterBankId");
             return Page();
         }
