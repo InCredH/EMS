@@ -24,12 +24,12 @@ namespace EMS.Pages.Lines
             ViewData["Substation2Id"] = new SelectList(_context.Set<Substation>(), "SubstationId", "SubstationName");
             ViewData["Owners"] = new SelectList(_context.Set<Owner>(), "OwnerId", "OwnerName");
             ViewData["Locations"] = new SelectList(_context.Set<Location>(), "LocationId", "LocationName");
-            ViewData["LineType"] = new SelectList(new List<string> { "AC Transmission Line", "HVDC Line" });
+            ViewData["LineType"] = new SelectList(new List<string> { "AC", "HVDC" });
             return Page();
         }
 
         [BindProperty]
-        public Line Line { get; set; } = default!;
+        public Line? Line { get; set; } = default!;
         [BindProperty]
         public Element? Element { get; set; }
 
@@ -53,7 +53,42 @@ namespace EMS.Pages.Lines
                 ModelState.AddModelError("Element.Substation1Id", "Substation1 and Substation2 should not have the same location");
                 ModelState.AddModelError("Element.Substation2Id", "Substation1 and Substation2 should not have the same location");
                 return Page();
-            }            
+            }
+
+            //FromBus and ToBus should belong to HVDC Substation and both the substations should be different with the same voltage level
+            var fromBus = await _context.Bus.FindAsync(Line.FromBusId);
+            var toBus = await _context.Bus.FindAsync(Line.ToBusId);
+
+            if(fromBus?.Element?.Substation1Id == toBus?.Element?.Substation1Id) {
+                ModelState.AddModelError("Line.FromBusId", "FromBus and ToBus should belong to different Substation");
+                ModelState.AddModelError("Line.ToBusId", "FromBus and ToBus should belong to different Substation");
+                return Page();
+            }
+
+            var from_bus_substationid = await _context.Substation.FindAsync(fromBus?.Element?.Substation1Id);
+
+            if(from_bus_substationid?.SubstationType != "HVDC") {
+                ModelState.AddModelError("Line.FromBusId", "FromBus and ToBus should belong to HVDC Substation");
+                return Page();
+            }
+
+            var to_bus_substationid = await _context.Substation.FindAsync(toBus?.Element?.Substation1Id);
+
+            if(Line.LineType == "HVDC") {
+                if(to_bus_substationid?.SubstationType != "DC") {
+                    ModelState.AddModelError("Line.ToBusId", "FromBus and ToBus should belong to HVDC Substation");
+                    return Page();
+                }
+            }
+
+            if(from_bus_substationid?.VoltageId != to_bus_substationid?.VoltageId) {
+                ModelState.AddModelError("Line.FromBusId", "FromBus and ToBus should belong to the same voltage level");
+                ModelState.AddModelError("Line.ToBusId", "FromBus and ToBus should belong to the same voltage level");
+                return Page();
+            }
+
+
+
             Element.ElementType = "Line";
             DateTime Comm_utcDateTime = Element.CommissioningDate.ToUniversalTime();
             DateTime DeComm_utcDateTime = Element.DecommissioningDate.ToUniversalTime();
