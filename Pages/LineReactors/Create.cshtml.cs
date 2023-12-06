@@ -43,6 +43,24 @@ namespace EMS.Pages.LineReactors
             {
                 return Page();
             }
+            var associatedElementIds = _context.Line
+                .Where(l => l.LineId == LineReactor.LineId)
+                .Select(l => l.ElementId)
+                .FirstOrDefault();
+            var substation1Id=_context.Element
+                .Where(e=>e.ElementId==associatedElementIds)
+                .Select (e => e.Substation1Id)
+                .FirstOrDefault();
+            var substation2Id = _context.Element
+                .Where(e => e.ElementId == associatedElementIds)
+                .Select(e => e.Substation2Id)
+                .FirstOrDefault();
+
+            if(Element.Substation1Id!=substation1Id || Element.Substation2Id != substation2Id)
+            {
+                ModelState.AddModelError("Element.Substation1Id", "Substation1Id must be one of the associated Substations for the selected Line.");
+                return Page();
+            }
             Element.ElementType = "Line Reactor";
             DateTime Comm_utcDateTime = Element.CommissioningDate.ToUniversalTime();
             DateTime DeComm_utcDateTime = Element.DecommissioningDate.ToUniversalTime();

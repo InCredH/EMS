@@ -36,12 +36,26 @@ namespace EMS.Pages.GeneratingUnits
         public GeneratingUnit GeneratingUnit { get; set; } = default!;
         [BindProperty]
         public Element? Element { get; set; }
-
+        
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
           if (!ModelState.IsValid || _context.GeneratingUnit == null || GeneratingUnit == null)
             {
+                return Page();
+            }
+            var generatingVoltage = _context.Voltage
+              .Where(v => v.VoltageId == GeneratingUnit.VoltageId)
+              .Select(v => v.VoltageLevel)
+              .FirstOrDefault();
+
+            var transformerHVVoltage = _context.Voltage
+                .Where(v => v.VoltageId == GeneratingUnit.GeneratingTransformerHVVoltageId)
+                .Select(v => v.VoltageLevel)
+                .FirstOrDefault();
+            if (transformerHVVoltage <= generatingVoltage)
+            {
+                ModelState.AddModelError("GeneratingUnit.GeneratingTransformerHVVoltageId", "Generating Transformer HV Voltage must be greater than Voltage.");
                 return Page();
             }
             Element.ElementType = "Generating Unit";
