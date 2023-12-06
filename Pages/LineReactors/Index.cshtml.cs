@@ -27,8 +27,7 @@ namespace EMS.Pages.LineReactors
             {
                 LineReactor = await _context.LineReactor
                 .Include(l => l.Element)
-                .Include(l => l.Line)
-                .Include(l => l.Substation).ToListAsync();
+                .Include(l => l.Line).ToListAsync();
             }
         }
     }

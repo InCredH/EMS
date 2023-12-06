@@ -13,17 +13,48 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
-                <label asp-for="LineReactor.ElementId" class="control-label"></label>
-                <select asp-for="LineReactor.ElementId" class ="form-control" asp-items="ViewBag.ElementId"></select>
+                <label asp-for="LineReactor.LineId" class="control-label">Line</label>
+                <select asp-for="LineReactor.LineId" class="form-control" asp-items="ViewBag.LineId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="LineReactor.SubstationId" class="control-label"></label>
-                <select asp-for="LineReactor.SubstationId" class ="form-control" asp-items="ViewBag.SubstationId"></select>
+                <label asp-for="LineReactor.MVARCapacity" class="control-label">MVARCapacity</label>
+                <input asp-for="LineReactor.MVARCapacity" class="form-control" />
+                <span asp-validation-for="LineReactor.MVARCapacity" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="LineReactor.LineId" class="control-label"></label>
-                <select asp-for="LineReactor.LineId" class ="form-control" asp-items="ViewBag.LineId"></select>
+                <label asp-for="LineReactor.LineReactorName" class="control-label">Name</label>
+                <input asp-for="LineReactor.LineReactorName" class="form-control" />
+                <span asp-validation-for="LineReactor.LineReactorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.ElementNumber" class="control-label">Element Number</label>
+                <input asp-for="Element.ElementNumber" class="form-control" />
+                <span asp-validation-for="Element.ElementNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.CommissioningDate" class="control-label">Commissioning Date</label>
+                <input asp-for="Element.CommissioningDate" class="form-control" type="date" />
+                <span asp-validation-for="Element.CommissioningDate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Element.DecommissioningDate" class="control-label">DeCommissioning Date</label>
+                <input asp-for="Element.DecommissioningDate" class="form-control" type="date" />
+                <span asp-validation-for="Element.DecommissioningDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.LocationId" class="control-label">Location</label>
+                <select asp-for="Element.LocationId" class="form-control" asp-items="ViewBag.Locations"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.Substation1Id" class="control-label"></label>
+                <select asp-for="Element.Substation1Id" class="form-control" asp-items="ViewBag.Substation1Id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Element.ElementOwners" class="control-label"></label>
+                <select name="Owners" asp-for="Element.ElementOwners" class="form-control" asp-items="ViewBag.Owners" multiple></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
