@@ -31,6 +31,7 @@
             <div class="form-group">
                 <label asp-for="GeneratingUnit.VoltageId" class="control-label"></label>
                 <select asp-for="GeneratingUnit.VoltageId" class="form-control" asp-items="ViewBag.VoltageId"></select>
+                <span asp-validation-for="GeneratingUnit.GeneratingTransformerHVVoltageId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="GeneratingUnit.GeneratingTransformerHVVoltageId" class="control-label"></label>
