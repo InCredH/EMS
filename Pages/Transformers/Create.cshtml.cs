@@ -42,10 +42,21 @@ namespace EMS.Pages.Transformers
            {
                return Page();
            }
-           if(Element == null || Transformer == null) {
-               Console.WriteLine("Element or Transformer is null");
+           if(Element == null) {
+               Console.WriteLine("Element is null");
                return Page();
            }
+
+            //Substation1 and Substation2 should have the same location
+            var substation1Id = await _context.Substation.FindAsync(Element.Substation1Id);
+            var substation2Id = await _context.Substation.FindAsync(Element.Substation2Id);
+
+            if(substation1Id?.LocationId != substation2Id?.LocationId) {
+                ModelState.AddModelError("Element.Substation1Id", "Substation1 and Substation2 should have the same location");
+                ModelState.AddModelError("Element.Substation2Id", "Substation1 and Substation2 should have the same location");
+                return Page();
+            }
+
            Element.ElementType = "Transformer";
            //change dates to UTC
             DateTime Comm_utcDateTime = Element.CommissioningDate.ToUniversalTime();
