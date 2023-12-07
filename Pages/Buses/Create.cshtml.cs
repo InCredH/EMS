@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using EMS.Models;
+//import utils.CombinationChecker;
+using EMS.utils;
 
 namespace EMS.Pages.Buses
 {
@@ -29,23 +31,41 @@ namespace EMS.Pages.Buses
         public Element? Element { get; set; } = default!;
         [BindProperty]
         public ElementOwner? ElementOwner { get; set; } = default!;
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Bus == null || Bus == null)
+            if (!ModelState.IsValid || _context.Bus == null || Bus == null)
             {
                 return Page();
             }
 
-            if(Element == null || Bus == null) {
+            if (Element == null || Bus == null)
+            {
                 Console.WriteLine("Element or Bus is null");
                 return Page();
             }
+
+            //combination of substationID1, substationID2, elementNumber,busType is unique
+            // Func<Bus, bool> busPredicate = bus =>
+            //     _context.Bus.Any(b =>
+            //         b.Element != null && bus.Element != null &&
+            //         b.Element.Substation1Id == bus.Element.Substation1Id &&
+            //         b.Element.ElementNumber == bus.Element.ElementNumber &&
+            //         b.BusType == bus.BusType);
+
+            // var combinationChecker = new CombinationChecker();
+            // bool isUnique = combinationChecker.IsCombinationUnique(busPredicate, _context.Bus);
+
+            // if (!isUnique)
+            // {
+            //     ModelState.AddModelError("Element.Substation1Id", "combination of substationID1, substationID2, elementNumber, busType should be unique");
+            //     return Page();
+            // }
+
             // Set the element data
             Element.ElementType = "Bus";
-           
 
             //Changing the dates to UTC
             DateTime Comm_utcDateTime = Element.CommissioningDate.ToUniversalTime();
@@ -55,7 +75,7 @@ namespace EMS.Pages.Buses
             Element.DecommissioningDate = DeComm_utcDateTime;
 
             // Add the element to the context
-            _context.Element.Add(Element);
+            await _context.Element.AddAsync(Element);
 
             // Save changes to retrieve the ElementId
             await _context.SaveChangesAsync();
@@ -67,21 +87,18 @@ namespace EMS.Pages.Buses
             Bus.ElementId = lastElementId;
 
             // Create ElementOwner objects and add to context for the many-to-many relationship
-            foreach (var ownerId in Request.Form["Owners"]) // Assuming "Owners" is the name of the multiple select control
+            var elementOwners = Request.Form["Owners"]
+            .Select(ownerId => new ElementOwner
             {
-                Console.WriteLine("OwnerId: "+ownerId);
-                var elementOwner = new ElementOwner
-                {
-                    ElementId = lastElementId,
-                    OwnerId = Convert.ToInt32(ownerId) // Assuming OwnerId is an integer
-                };
+                ElementId = lastElementId,
+                OwnerId = Convert.ToInt32(ownerId)
+            });
 
-                _context.ElementOwner.Add(elementOwner);
-                await _context.SaveChangesAsync();
-            }
+            await _context.ElementOwner.AddRangeAsync(elementOwners);
+            await _context.SaveChangesAsync();
 
             // Add the bus to the context
-            _context.Bus.Add(Bus);
+            await _context.Bus.AddAsync(Bus);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

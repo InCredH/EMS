@@ -17,6 +17,13 @@ namespace EMS.Data
             options.UseNpgsql(Configuration?.GetConnectionString("Supabase"));
         }
 
+        public bool IsCombinationUnique<T>(Func<T, bool> predicate) where T : class
+        {
+            var queryable = Set<T>(); // Assuming `Set<T>` is available in your DbContext
+
+            return !queryable.Any(predicate);
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Element Foreign Keys
