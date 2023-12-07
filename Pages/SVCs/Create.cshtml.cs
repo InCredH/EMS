@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using EMS.Data;
 using EMS.Models;
 
 namespace EMS.Pages.SVCs
@@ -21,7 +16,7 @@ namespace EMS.Pages.SVCs
 
         public IActionResult OnGet()
         {
-        ViewData["BusId"] = new SelectList(_context.Bus, "BusId", "BusId");
+            ViewData["BusId"] = new SelectList(_context.Bus, "BusId", "BusName");
             ViewData["Substation1Id"] = new SelectList(_context.Set<Substation>(), "SubstationId", "SubstationName");
             ViewData["Owners"] = new SelectList(_context.Set<Owner>(), "OwnerId", "OwnerName");
             ViewData["Locations"] = new SelectList(_context.Set<Location>(), "LocationId", "LocationName");
@@ -42,6 +37,18 @@ namespace EMS.Pages.SVCs
             {
                 return Page();
             }
+
+            //Bus should belong to AC Substation only
+            var bus = await _context.Bus.FindAsync(SVC.BusId);
+            var element = await _context.Element.FindAsync(bus.ElementId);
+            var substation = await _context.Substation.FindAsync(element.Substation1Id);
+
+            if (substation.SubstationType != "AC")
+            {
+                ModelState.AddModelError("SVC.BusId", "Bus should belong to AC Substation only");
+                return Page();
+            }
+
             Element.ElementType = "SVC";
             DateTime Comm_utcDateTime = Element.CommissioningDate.ToUniversalTime();
             DateTime DeComm_utcDateTime = Element.DecommissioningDate.ToUniversalTime();

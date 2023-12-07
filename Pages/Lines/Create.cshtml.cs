@@ -81,6 +81,13 @@ namespace EMS.Pages.Lines
                 }
             }
 
+            if(Line.LineType == "AC") {
+                if(to_bus_substationid?.SubstationType != "AC") {
+                    ModelState.AddModelError("Line.ToBusId", "FromBus and ToBus should belong to AC Substation");
+                    return Page();
+                }
+            }
+
             if(from_bus_substationid?.VoltageId != to_bus_substationid?.VoltageId) {
                 ModelState.AddModelError("Line.FromBusId", "FromBus and ToBus should belong to the same voltage level");
                 ModelState.AddModelError("Line.ToBusId", "FromBus and ToBus should belong to the same voltage level");
