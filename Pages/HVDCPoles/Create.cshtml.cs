@@ -22,8 +22,8 @@ namespace EMS.Pages.HVDCPoles
 
         public IActionResult OnGet()
         {
-        ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
-        ViewData["VoltageId"] = new SelectList(_context.Voltage, "VoltageId", "VoltageId");
+            ViewData["ElementId"] = new SelectList(_context.Set<Element>(), "ElementId", "ElementId");
+            ViewData["VoltageId"] = new SelectList(_context.Voltage, "VoltageId", "VoltageId");
             ViewData["PoleType"] = new SelectList(Enum.GetValues(typeof(PoleType)));
             ViewData["Substation1Id"] = new SelectList(_context.Set<Substation>(), "SubstationId", "SubstationName");
             ViewData["Owners"] = new SelectList(_context.Set<Owner>(), "OwnerId", "OwnerName");
@@ -48,6 +48,15 @@ namespace EMS.Pages.HVDCPoles
                 Console.WriteLine("Element or Pole null");
                 return Page();
             }
+
+            //substation should be HVDC
+            var substation = await _context.Substation.FindAsync(Element.Substation1Id);
+            if (substation.SubstationType != "HVDC")
+            {
+                ModelState.AddModelError("Element.Substation1Id", "Substation should be HVDC");
+                return Page();
+            }
+
             Element.ElementType = "HVDCPole";
             _context.Element.Add(Element);
             await _context.SaveChangesAsync();
