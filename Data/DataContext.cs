@@ -97,6 +97,9 @@ namespace EMS.Data
                 .WithMany()
                 .HasForeignKey(e => e.VoltageId);
 
+            modelBuilder.Entity<Line>()
+                .HasIndex(b => new { b.FromBusId, b.ToBusId, b.CircuitNumber }).IsUnique();
+
             modelBuilder.Entity<LineReactor>()
                 .HasOne(e => e.Element)
                 .WithMany()
