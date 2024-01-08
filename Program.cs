@@ -43,4 +43,13 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapGet("wwwroot/js/myscript.js", async context =>
+    {
+        await context.Response.WriteAsync(System.IO.File.ReadAllText("wwwroot/js/myscript.js"));
+    });
+});
+
+
 app.Run();
