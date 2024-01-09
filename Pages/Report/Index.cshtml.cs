@@ -30,7 +30,6 @@ namespace EMS.Pages.Report
                 string result = process.StandardOutput.ReadToEnd();
                 process.WaitForExit();
             }
-            Console.WriteLine("Hello");
             return RedirectToPage("./Index"); // Redirect back to the page
         }
     }
